@@ -57,7 +57,7 @@
 
 
     <header id="HOME" style="background-position: 50% -125px;">
-         <div id="PHASER"></div>
+         <div id="PHASER" style="position: static; top: 0; left: 0; z-index: 100;">Hellovffdffrdfffcfff?</div>
 	        <div class="section_overlay">
                
 	            <nav class="navbar navbar-default navbar-fixed-top">
@@ -501,6 +501,9 @@
               width:800,
               height:600
             },
+            dom: {
+              createContainer: true
+            },
             physics: {
                 default: 'arcade',
                 arcade: {
@@ -527,7 +530,7 @@
         function create ()
         {
           
-          Phaser.Canvas.setTouchAction(game.canvas, "auto"); // disable the default "none"
+          //Phaser.Canvas.setTouchAction(game.canvas, "AUTO"); // disable the default "none"
     game.input.touch.preventDefault = false;
           
             this.add.image(400, 300, 'sky');
