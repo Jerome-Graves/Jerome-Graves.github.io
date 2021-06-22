@@ -57,6 +57,7 @@
 
 
     <header id="HOME" style="background-position: 50% -125px;">
+        <div id="PHASER"></div>
 	        <div class="section_overlay">
 	            <nav class="navbar navbar-default navbar-fixed-top">
 	              <div class="container">
@@ -484,7 +485,7 @@
 
     <script>
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'HOME', { preload: preload, create: create, update: update, render: render });
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'PHASER', { preload: preload, create: create, update: update, render: render });
     
         function preload ()
         {
