@@ -485,8 +485,24 @@
     <script src="js/script.js"></script>
 
     <script>
-
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'PHASER', { preload: preload, create: create });
+        var config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            parent: 'PHASER',
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 200 }
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create
+            }
+        };
+    
+        var game = new Phaser.Game(config);
     
         function preload ()
         {
@@ -518,7 +534,6 @@
             emitter.startFollow(logo);
         }
         </script>
-
 
 
 </body>
