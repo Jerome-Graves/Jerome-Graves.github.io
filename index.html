@@ -43,7 +43,7 @@
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.19.0/dist/phaser-arcade-physics.min.js"></script>
 
 </head>
 
@@ -57,9 +57,9 @@
 
 
     <header id="HOME" style="background-position: 50% -125px;">
-        
+         <div id="PHASER"></div>
 	        <div class="section_overlay">
-                <div id="PHASER"><H1>HELLO</H1></div>
+               
 	            <nav class="navbar navbar-default navbar-fixed-top">
 	              <div class="container">
 	                <!-- Brand and toggle get grouped for better mobile display -->
@@ -485,11 +485,22 @@
     <script src="js/script.js"></script>
 
     <script>
+    
+    $(window).resize(function() {
+  console.log('window was resized');
+});
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        
         var config = {
             type: Phaser.AUTO,
-            width: 800,
-            height: 600,
-            parent: 'HOME',
+            backgroundColor: '#990088',
+            scale:{
+              mode: Phaser.Scale.RESIZE,
+              parent:'HOME',
+              width:800,
+              height:600
+            },
             physics: {
                 default: 'arcade',
                 arcade: {
@@ -515,6 +526,10 @@
     
         function create ()
         {
+          
+          Phaser.Canvas.setTouchAction(game.canvas, "auto"); // disable the default "none"
+    game.input.touch.preventDefault = false;
+          
             this.add.image(400, 300, 'sky');
     
             var particles = this.add.particles('red');
