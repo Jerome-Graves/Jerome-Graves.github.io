@@ -47,6 +47,13 @@
 
 </head>
 
+ <div id="PHASER" style="
+         height:100%;
+         position:fixed;
+         top: 0; 
+         left: 0; 
+       z-index: -100;"></div>
+
 <body>
                 <!-- Preloader -->
                 <div id="preloader">
@@ -55,16 +62,10 @@
 
 
 
-
-    <header id="HOME" style="background-position: 50% -125px;">
-         <div id="PHASER" style="
-         max-height: 200px;
-         position: fixed; 
-         top: 0; 
-         left: 0; 
-         z-index: -100;"></div>
+    <div id="HOME" style="background-position: 100% -125px;">
+        
 	        <div class="section_overlay">
-               
+              
 	            <nav class="navbar navbar-default navbar-fixed-top">
 	              <div class="container">
 	                <!-- Brand and toggle get grouped for better mobile display -->
@@ -75,7 +76,7 @@
 	                    <span class="icon-bar"></span>
 	                    <span class="icon-bar"></span>
 	                  </button>
-	                  <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+	                  
 	                </div>
 
 	                <!-- Collect the nav links, forms, and other content for toggling -->
@@ -116,7 +117,7 @@
 	            </div>            
 	        </div>  
 	    </section>         
-    </header>
+    </div>
 
 
     <section class="services" id="SERVICE">
@@ -502,9 +503,9 @@
             backgroundColor: '#990088',
             scale:{
               mode: Phaser.Scale.FIX,
-              parent:'HOME',
+              parent:'PHASER',
               width:800,
-              height:100
+              height:400
             },
             dom: {
               createContainer: true
