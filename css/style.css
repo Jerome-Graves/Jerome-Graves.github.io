@@ -126,7 +126,9 @@ background-color: #2d3334;
 	background: rgba(250,250,250, .3);
 	
 }
-
+div .icon:after{
+	display: none;
+}
 
 .testimonial .icon:after{
 	content: "";
