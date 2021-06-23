@@ -427,9 +427,12 @@
         
         var config = {
             type: Phaser.AUTO,
-          backgroundColor: '#ffff00',
+            backgroundColor: '#ffff00',
+            pixelArt:true,
+            anitalias: false,
+            roundPixels:false,
             scale:{
-              mode: Phaser.Scale.FIX,
+            mode: Phaser.Scale.RESIZE,
               parent:'PHASER',
               width:800,
               height:400
@@ -453,35 +456,50 @@
     
         function preload ()
         {
-            this.load.setBaseURL('http://labs.phaser.io');
-    
-            this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-            this.load.image('red', 'assets/particles/red.png');
+           this.load.image('tiles', 'assets/TileSet_01.png');
+      
+this.load.spritesheet('char','assets/char.png',{frameWidth:8,frameHeight:8,endFrame:4});
+            
         }
     
         function create ()
         {
           
-          //Phaser.Canvas.setTouchAction(game.canvas, "AUTO"); // disable the default "none"
-    //game.input.touch.preventDefault = false;
-          
 
+     
+        // Load a map from a 2D array of tile indices
+  const level = [
+    [  0,   1,   1,   1,   1,   1,   1,   1,   2],
+    [  8,   3,   3,   3,   3,   3,   3,   3,  10],
+    [  8,   3,   25,   3,   25,   3,   25,   3,  10],
+    [  8,   3,   3,   3,   3,   3,   3,   3,    10],
+    [  8,   3,   25,  3,  25,  3,   25,   3,   10],
+    [  8,   3,   3,   3,   3,   3,   3,   3,   10],
+    [  8,   3,   25,   3,   25,   3,   25,   3,  10],
+    [  8,   3,  3,  3,  3,  3,  3,   3,   10],
+    [ 16,  17,  17,   17,   17,   17,   17,   17, 18]
+  ];
+
+// When loading from an array, make sure to specify the tileWidth and tileHeight
+  
+const map = this.make.tilemap({ data: level, tileWidth: 8, tileHeight:8});
+  
+ 
+  const tiles = map.addTilesetImage("tiles");
+//
+  const layer = map.createStaticLayer(0, tiles, 0, 0).setScale(10, 10); 
     
-            var particles = this.add.particles('red');
+  var char = this.add.sprite(80, 80, "char",0)
+  char.setScale(10,10);
+  char.setOrigin(0,0);
     
-            var emitter = particles.createEmitter({
-                speed: 100,
-                scale: { start: 1, end: 0 },
-                blendMode: 'ADD'
-            });
     
-            var logo = this.physics.add.image(400, 100, 'logo');
+  this.anims.create({
+    key: 'idle',
+    frames: this.anims.generateFrameNumbers('char', { start: 0, end: 3 }), frameRate: 0.5, repeat: -1 });
+
+    char.anims.play('idle', true);
     
-            logo.setVelocity(100, 200);
-            logo.setBounce(1, 1);
-            logo.setCollideWorldBounds(true);
-    
-            emitter.startFollow(logo);
         }
         </script>
 
