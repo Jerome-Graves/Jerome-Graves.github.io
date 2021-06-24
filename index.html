@@ -394,8 +394,23 @@
     window.addEventListener('resize', () => {
     game.resize(window.innerWidth, window.innerHeight);
     game.cameras.main.x = window.innerWidth/4;
-
 });
+
+const createAligned = (scene, totalWidth, texture, scrollFactor) => {
+	const w = scene.textures.get(texture).getSourceImage().width
+	const count = Math.ceil(totalWidth / w) * scrollFactor
+
+	let x = 0
+	for (let i = 0; i < count; ++i)
+	{
+		const m = scene.add.image(x, scene.scale.height, texture)
+			.setOrigin(0, 1)
+			.setScrollFactor(scrollFactor).setScale(2)
+
+		x += m.width
+	}
+}
+
 
         var config = {
             type: Phaser.AUTO,
@@ -420,7 +435,8 @@
             },
             scene: {
                 preload: preload,
-                create: create
+                create: create,
+                update: update
             }
         };
     
@@ -428,57 +444,56 @@
     
         function preload ()
         {
-           this.load.image('tiles', 'assets/TileSet_01.png');
+            this.load.image('black', 'assets/black.jpg');
+            this.load.image('sky', 'assets/Hills Layer 01.png');
+	        this.load.image('mountains', 'assets/Hills Layer 02.png');
+	        this.load.image('plateau', 'assets/Hills Layer 03.png');
+	        this.load.image('plants', 'assets/Hills Layer 04.png');
+	        this.load.image('ground', 'assets/Hills Layer 05.png');
+            this.load.image('ground0', 'assets/Hills Layer 06.png');
       
-this.load.spritesheet('char','assets/char.png',{frameWidth:8,frameHeight:8,endFrame:4});
-            
+           
         }
     
         function create ()
        {
-        //this.cameras.main.x += screen.width/2;
-       
-           this.cameras.main.setZoom(1);
 
-     
-        // Load a map from a 2D array of tile indices
-  const level = [
-    [  0,   1,   1,   1,   1,   1,   1,   1,   2],
-    [  8,   3,   3,   3,   3,   3,   3,   3,  10],
-    [  8,   3,   25,   3,   25,   3,   25,   3,  10],
-    [  8,   3,   3,   3,   3,   3,   3,   3,    10],
-    [  8,   3,   25,  3,  25,  3,   25,   3,   10],
-    [  8,   3,   3,   3,   3,   3,   3,   3,   10],
-    [  8,   3,   25,   3,   25,   3,   25,   3,  10],
-    [  8,   3,  3,  3,  3,  3,  3,   3,   10],
-    [ 16,  17,  17,   17,   17,   17,   17,   17, 18]
-  ];
+        const width = this.scale.width
+	    const height = this.scale.height
+        const totalWidth = width * 10
 
-// When loading from an array, make sure to specify the tileWidth and tileHeight
-  
-const map = this.make.tilemap({ data: level, tileWidth: 8, tileHeight:8});
-  
- 
-  const tiles = map.addTilesetImage("tiles");
-  const layer = map.createStaticLayer(0, tiles, 0, 0).setScale(10, 10).setOrigin(0); 
-    
-  var char = this.add.sprite(80, 80, "char",0)
-  char.setScale(10,10);
-  char.setOrigin(0,0);
-    
+	    
+        //
+        this.add.image(width * 0.75, height * 0.5, 'sky').setScrollFactor(0).setScale(2);
+        this.add.image(width * 0.25,height * 0.5, 'sky').setScrollFactor(0).setScale(2);
+        this.add.image(width * 0.5, height * 0.5, 'sky').setScrollFactor(0).setScale(2);
+        
+        
+       // createAligned(this, totalWidth, 'sky', 1);
+        createAligned(this, totalWidth, 'mountain', 0.25/4);
+	    createAligned(this, totalWidth, 'plateau', 0.5/4);
+	    createAligned(this, totalWidth, 'plants', 1/4);
+	    createAligned(this, totalWidth, 'ground', 1.25/4);
+        createAligned(this, totalWidth, 'ground0', 1.5/4);
 
-
-  //this.cameras.main.x = window.innerWidth/4;
-    //this.camera.main.startFollow(layer,false,0.5,0.5);
- // this.cameras.main.x  -= layer.width/2
-    
-  this.anims.create({
-    key: 'idle',
-    frames: this.anims.generateFrameNumbers('char', { start: 0, end: 3 }), frameRate: 0.5, repeat: -1 });
-
-    char.anims.play('idle', true);
-    
+        //var r1 = this.add.rectangle(0, 0,totalWidth, height*2, 0x0000ff);
+         this.r1 = this.add.image(0,0, 'black').setScale(20);
+        
         }
+
+        function update ()
+       {
+        const speed = 1;
+        this.cameras.main.scrollX += speed;
+        var pos = document.documentElement.scrollTop;
+        //r1.alpha = 0;//pos/1000;
+        //r1.setFill(0);
+        this.r1.setAlpha(pos/250);
+        if (this.cameras.main.scrollX> 2000) {
+            this.cameras.main.scrollX = 0;
+        }
+
+       }
         </script>
 
 
