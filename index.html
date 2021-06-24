@@ -189,7 +189,7 @@
                     <p class="about_us_p">From <b>London, UK</b>. My history with technology starts at age 10 when my mother, a C++ developer at the time, taught me how to code. Years Later I graduated with a <b>1st class degree in electronic and electrical engineering</b> from <b>London South Bank University</b>. I have a passion for robotic control software and my final year project was titled <b>Quadrupedal robotic Platform for research on legged motion</b>. It was a mechatronic project that required me to design and build a 4 legged robot and control software using <b>ROS (Robotic Operating System)</b> that would allow for traversal over uneven terrain.</p>
                 </div>
                 <div class="col-md-4  wow fadeInUp animated">
-                    <p class="about_us_p">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    <p class="about_us_p">..</p>
                 </div>
             </div>
         </div>
@@ -390,6 +390,11 @@
 
     <script>
     
+    window.addEventListener('resize', () => {
+    game.resize(window.innerWidth, window.innerHeight);
+    game.cameras.main.x = window.innerWidth/4;
+
+});
 
         var config = {
             type: Phaser.AUTO,
@@ -430,7 +435,8 @@ this.load.spritesheet('char','assets/char.png',{frameWidth:8,frameHeight:8,endFr
     
         function create ()
        {
-        this.cameras.main.x += screen.width/4;
+        //this.cameras.main.x += screen.width/2;
+       
            this.cameras.main.setZoom(1); 
 
      
@@ -459,6 +465,10 @@ const map = this.make.tilemap({ data: level, tileWidth: 8, tileHeight:8});
   char.setScale(10,10);
   char.setOrigin(0,0);
     
+
+
+  this.cameras.main.x = window.innerWidth/4;
+ // this.cameras.main.x  -= layer.width/2
     
   this.anims.create({
     key: 'idle',
