@@ -475,3 +475,12 @@ canvas {
     transform: translate(-50%, -50%);
 }
 
+a {
+	color:#f73b56;
+	text-decoration: none;
+	text-transform: uppercase;	
+}
+a:hover {
+	color:#f73b56;
+	font-weight:500;
+}
