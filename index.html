@@ -468,7 +468,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
 
         const width = this.scale.width
 	    const height = this.scale.height
-        const totalWidth = width * 10
+        const totalWidth = width * 70
 
 	    
         //
@@ -485,7 +485,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
         createAligned(this, totalWidth, 'ground0', 1.5/4);
 
         //var r1 = this.add.rectangle(0, 0,totalWidth, height*2, 0x0000ff);
-         this.r1 = this.add.image(0,0, 'black').setScale(50);
+         this.r1 = this.add.image(0,0, 'black').setScale(500);
         
         }
 
@@ -500,7 +500,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
         this.r1.setAlpha(pos/250);
         
         
-        if (this.cameras.main.scrollX> 12000) {
+        if (this.cameras.main.scrollX> 40000) {
             this.cameras.main.scrollX = 0;
         }
 
