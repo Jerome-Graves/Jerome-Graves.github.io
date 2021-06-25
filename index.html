@@ -491,9 +491,10 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
 
         function update ()
        {
-        const speed = 2;
-        this.cameras.main.scrollX += speed;
         var pos = document.documentElement.scrollTop;
+        var speed = 2 + (pos/250)*25;
+        this.cameras.main.scrollX += speed;
+        
         //r1.alpha = 0;//pos/1000;
         //r1.setFill(0);
         this.r1.setAlpha(pos/250);
