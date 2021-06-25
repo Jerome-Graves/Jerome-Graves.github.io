@@ -1941,7 +1941,7 @@
           deltaX: 0,
           deltaZ: 0,
           preventDefault: function() {
-            e.preventDefault ? e.preventDefault() : e.returnValue = false;
+            //e.preventDefault ? e.preventDefault() : e.returnValue = false;
             return false;
           },
           stopImmediatePropagation: function() {

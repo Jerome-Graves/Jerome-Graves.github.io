@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jerome Graves</title>
     <!-- Google Font -->
-    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Font Awesome -->
 
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
      <!-- Preloader -->
     <link rel="stylesheet" href="css/preloader.css" type="text/css" media="screen, print"/>
@@ -394,8 +394,7 @@
     <script>
     
     window.addEventListener('resize', () => {
-    game.resize(window.innerWidth, window.innerHeight);
-    game.cameras.main.x = window.innerWidth/4;
+    //game.cameras.main.x = window.innerWidth/4;
 });
 
 const createAligned = (scene, totalWidth, texture, scrollFactor) => {
@@ -485,7 +484,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
 
         function update ()
        {
-        const speed = 1;
+        const speed = 2;
         this.cameras.main.scrollX += speed;
         var pos = document.documentElement.scrollTop;
         //r1.alpha = 0;//pos/1000;
@@ -493,7 +492,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
         this.r1.setAlpha(pos/250);
         
         
-        if (this.cameras.main.scrollX> 50000) {
+        if (this.cameras.main.scrollX> 20000) {
             this.cameras.main.scrollX = 0;
         }
 
