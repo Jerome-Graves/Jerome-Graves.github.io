@@ -60,22 +60,27 @@
 
 
     <div id="HOME" style="background-position: 100% -125px; top: 0;">
-        <a
-       style="
-       font-size:10px;
-       position: absolute;
-        bottom:25% ;
-        z-index: 100;
-       "
-       href="https://edermunizz.itch.io/free-pixel-art-hill" target="_blank">edermunizz</a>
+
 
 	        <div class="section_overlay" style="overflow: hidden;
-         top: 0; position:relitive;">
+         top: 0; position:relative;">
+
+<a
+style="
+font-size:10px;
+position:absolute;
+ bottom:0% ;
+ z-index: 100;
+"
+href="https://edermunizz.itch.io/free-pixel-art-hill" target="_blank">edermunizz</a>
+
+
+
              <div id="PHASER" style="
-         height:75%;
+         height:130%;
          width:100%;
          position:absolute;
-         top: 0; 
+        
          left: 0; 
        z-index: -100;
        overflow: hidden;
@@ -422,7 +427,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
 	{
 		const m = scene.add.image(x, scene.scale.height, texture)
 			.setOrigin(0, 1)
-			.setScrollFactor(scrollFactor).setScale(2)
+			.setScrollFactor(scrollFactor).setScale(4)
 
 		x += m.width
 	}
@@ -430,7 +435,7 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
 
 
         var config = {
-            type: Phaser.AUTO,
+            type: Phaser.CANVAS,
             backgroundColor: '#000000',
             pixelArt:true,
             anitalias: false,
@@ -481,12 +486,13 @@ const createAligned = (scene, totalWidth, texture, scrollFactor) => {
 
 	    
         //
-        this.add.image(width * 0.75, height * 0.5, 'sky').setScrollFactor(0).setScale(2);
-        this.add.image(width * 0.25,height * 0.5, 'sky').setScrollFactor(0).setScale(2);
-        this.add.image(width * 0.5, height * 0.5, 'sky').setScrollFactor(0).setScale(2);
+        bg1 =this.add.image(width/2, height, 'sky').setScrollFactor(0).setOrigin(0.5, 1).setScale(4);
+
+       // this.add.image(width * 0.25,height * 0.5, 'sky').setScrollFactor(0).setScale(2);
+      //  this.add.image(width * 0.5, height * 0.5, 'sky').setScrollFactor(0).setScale(2);
         
         
-       // createAligned(this, totalWidth, 'sky', 1);
+        //createAligned(this, totalWidth, 'sky', 1);
         createAligned(this, totalWidth, 'mountain', 0.25/4);
 	    createAligned(this, totalWidth, 'plateau', 0.5/4);
 	    createAligned(this, totalWidth, 'plants', 1/4);
