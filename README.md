@@ -1,7 +1,7 @@
 # Jerome-Graves.github.io
 Portfolio Website
 
-<jeromegraves.com>
+[jeromegraves.com](https://jeromegraves.com)
 
 ## About
 
