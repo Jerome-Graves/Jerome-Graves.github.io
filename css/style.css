@@ -420,31 +420,32 @@ font-size: 16px;
 }
 ul.icon_list{
 margin: 0;
-padding: 0;
+padding: 100px;
 list-style: none;
 text-align: center;
 margin-top: 20px;
+width: 50%;
 }
 ul.icon_list li{
 display: inline;
-padding-left: 3px;
-padding-right: 3px;
+padding-left: 100px;
+padding-right: 100px;
+font-size: large;
+border:none;
 }
 ul.icon_list li a{
 display: inline-block;
 color: #636363;
-border: 1px solid #636363;
-border-radius: 50%;
+text-align: right;
+font-size: 100px;
 text-align: center;
-width: 30px;
-height: 30px;
-text-align: center;
-line-height: 28px;
+line-height: 50px;
 transition: all 1s;
+margin: 100px;
+width: 100px;
 }
 ul.icon_list li a:hover{
 	color: #f73b56;
-	border-color:#f73b56; 
 }
 .copyright_text{
 padding-top: 80px;	
