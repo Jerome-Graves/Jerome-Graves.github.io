@@ -59,6 +59,8 @@
         var mouseY = 0;
         var count = 0;
 
+
+
         AFRAME.registerComponent("turn_head", {
             schema: {},
 
@@ -72,6 +74,7 @@
                 },
         });
 
+        //window.onscroll = function () { window.scrollTo(0, 0); };
         window.addEventListener("mousemove", (e) => {
             mouseX = (((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
             mouseY = (((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
@@ -100,7 +103,9 @@
 
 
         <div class="section_overlay" style="overflow: hidden;
-         top:0px; position:relative;height:100vh">
+         top:0px; position:relative;height:100vh "
+         onscroll = "function () { window.scrollTo(0, 0); }"
+         >
 
 
             <a style="font-size:20px;position:absolute; bottom:0% ; z-index: 10000;"
