@@ -57,21 +57,28 @@
 
         var mouseX = 0;
         var mouseY = 0;
-
+        var count = 0;
 
         AFRAME.registerComponent("turn_head", {
             schema: {},
 
             tick: function (time, timeDelta) {
                 // mouseX = mouseX - 50;
+                
+                count = count > 359 ? 0 : count += 1;
                 this.el.object3D.rotation.x = -mouseY;
                 this.el.object3D.rotation.y = -mouseX;
-            },
+                this.el.object3D.position.y += (Math.sin(count*2*Math.PI/360))/400;            
+                },
         });
 
         window.addEventListener("mousemove", (e) => {
             mouseX = (((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
             mouseY = (((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
+        });
+        window.addEventListener("touchmove", (e) => {
+            mouseX = (((window.innerWidth -e.changedTouches[0].clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
+            mouseY = (((window.innerHeight - e.changedTouches[0].clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
         });
     </script>
 </head>
@@ -96,32 +103,30 @@
          top:0px; position:relative;height:100vh">
 
 
-            <a style="font-size:25px;position:absolute; bottom:0% ; z-index: 10000;"
+            <a style="font-size:20px;position:absolute; bottom:0% ; z-index: 10000;"
                 href="https://codesandbox.io/s/github/Jerome-Graves/aframe-vue-elephant-head" target="_blank">view code</a>
 
 
 
             <div style="width: 100%;height:150%;position: absolute;left:50%;top:65%;z-index:-110;">
                 <a-scene embedded renderer="antialias: false;
-             colorManagement: false;
-             sortObjects: false;
-             physicallyCorrectLights: false;">
-                    <a-entity turn_head="">
-                        <a-entity position="0 -4 0" rotation="0 0 0" scale="0.3 0.3 0.3"
-                            gltf-model="https://jeromegraves.com/assets/elephant.glb">
+                colorManagement: false;
+                sortObjects: false;
+                physicallyCorrectLights: false;
+                maxCanvasWidth: 128;
+                maxCanvasHeight: 128;
+             ">
+                    
+                    <a-camera position="0 0 0" fov="40" near="1" wasd-controls-enabled="false">
+                    <a-entity turn_head="" position="0 0 -40">
+                        <a-entity position="0 -6 0"  rotation="0 0 0" scale="0.3 0.3 0.3"
+                            gltf-model="https://jeromegraves.com/assets/elephant.glb" 
+                            >
                             <a-cursor></a-cursor>
                         </a-entity>
                     </a-entity>
-                    <a-camera position="0 0 50" fov="40" near="1" wasd-controls-enabled="false"  look-controls>
                     </a-camera>
-                    <a-sky position="0 0 0" color="#40e34d" animation__color="property: components.material.material.color;  
-  type: color;
-to: #14171A;
-dur: 5000;
-dir: alternate;
-loop: true;
-elasticity: 10000;
-"></a-sky>
+                    
                 </a-scene>
             </div>
 
