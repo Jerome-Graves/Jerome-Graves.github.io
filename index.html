@@ -52,6 +52,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.19.0/dist/phaser-arcade-physics.min.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/look-controls.js"></script>
     <script>
 
         var mouseX = 0;
@@ -111,7 +112,7 @@
                             <a-cursor></a-cursor>
                         </a-entity>
                     </a-entity>
-                    <a-camera position="0 0 50" fov="40" near="1" wasd-controls-enabled="false"  look-controls="enabled: false,magicWindowTrackingEnabled: false">
+                    <a-camera position="0 0 50" fov="40" near="1" wasd-controls-enabled="false"  look-controls>
                     </a-camera>
                     <a-sky position="0 0 0" color="#40e34d" animation__color="property: components.material.material.color;  
   type: color;
