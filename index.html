@@ -7,6 +7,7 @@
     <meta name="keywords"
         content="Jerome Graves, jerome graves, web developer, electronic engineer, mechatronic engineer, full stack, full stack developer, front end, front-end, C++, javascript, python, FPGA, VHDL,Verilog,VHL">
     <meta name="author" content="Jerome Graves">
+    <meta name="description" content="Jerome Graves, electronic and software engineering!"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,8 +51,32 @@
 	<![endif]-->
 
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.19.0/dist/phaser-arcade-physics.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
 
+        var mouseX = 0;
+        var mouseY = 0;
+
+
+        AFRAME.registerComponent("turn_head", {
+            schema: {},
+
+            tick: function (time, timeDelta) {
+                // mouseX = mouseX - 50;
+                this.el.object3D.rotation.x = -mouseY;
+                this.el.object3D.rotation.y = -mouseX;
+            },
+        });
+
+        window.addEventListener("mousemove", (e) => {
+            mouseX = (((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
+            mouseY = (((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) /2;
+        });
+    </script>
 </head>
+
+
+
 
 <body>
     <!-- Preloader -->
@@ -61,31 +86,44 @@
 
 
 
-    <div id="HOME" style="background-position: 100% -125px; top: 0;">
+
+    <div id="HOME" style="background-position: 100% -125px; top: 0px;width:100%;">
+
 
 
         <div class="section_overlay" style="overflow: hidden;
-         top: 0; position:relative;">
-
-            <a style="
-font-size:25px;
-position:absolute;
- top:0% ;
- z-index: 10000;
-" href="https://codesandbox.io/s/Phaser3-Parallax-Example-rdv72" target="_blank">view code</a>
+         top:0px; position:relative;height:100vh">
 
 
 
-            <div id="PHASER" style="
-         height:130%;
-         width:100%;
-         position:absolute;
-        
-         left: 0; 
-       z-index: -100;
-       overflow: hidden;
-       ">
+
+            <div style="width: 100%;height:150%;position: absolute;left:50%;top:65%;z-index:-110;">
+                <a-scene embedded renderer="antialias: false;
+             colorManagement: false;
+             sortObjects: false;
+             physicallyCorrectLights: false;">
+                    <a-entity turn_head="">
+                        <a-entity position="0 -4 0" rotation="0 0 0" scale="0.3 0.3 0.3"
+                            gltf-model="https://jeromegraves.com/assets/elephant.glb">
+                            <a-cursor></a-cursor>
+                        </a-entity>
+                    </a-entity>
+                    <a-camera position="0 0 50" fov="40" near="1" wasd-controls-enabled="false" look-controls="false">
+                    </a-camera>
+                    <a-sky position="0 0 0" color="#40e34d" animation__color="property: components.material.material.color;  
+  type: color;
+to: #14171A;
+dur: 5000;
+dir: alternate;
+loop: true;
+elasticity: 10000;
+"></a-sky>
+                </a-scene>
             </div>
+
+
+
+
 
             <nav style="background: rgba(250,250,250, .7);" class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
@@ -120,8 +158,9 @@ position:absolute;
                     <div class="col-md-12 text-center">
                         <div class="home_text wow fadeInUp animated">
                             <h2>Jerome Graves</h2>
-                            <p><strong>Engineer</strong></p>
-                            <p>Electronics + Software</p>
+                            <strong><p>Electronic & Software</p>
+                            <p>Engineer</strong></p>
+                            
                             <img src="images/shape.png" alt="">
                         </div>
                     </div>
@@ -212,7 +251,8 @@ position:absolute;
                 </div>
             </div>
             <div class="col-md-4  wow fadeInUp animated">
-                <p class="about_us_p"><strong>Electronic engineer and Software developer</strong>. Experience in <strong>digital
+                <p class="about_us_p"><strong>Electronic engineer and Software developer</strong>. Experience in
+                    <strong>digital
                         and analogue circuit design</strong>, <strong>mechatronics design&nbsp;</strong>and
                     <strong>power electronics</strong> and many technical packages. <strong>Low-level and high-level
                         programming languages</strong>. Well-versed in technology and writing code to create systems
@@ -426,49 +466,37 @@ position:absolute;
                 <div class="row">
                     <div class="col-md-12 text-center   wow fadeInUp animated">
                         <div class="social">
-                            <h2
-                            style="font-size: 20px;"
-                            >Follow Me</h2>
+                            <h2 style="font-size: 20px;">Follow Me</h2>
                             <ul class="icon_list">
                                 <li>
-                                <a 
-                                style="width: 150px;height: auto;border:none;"
-                                href="https://www.twitter.com/vr_4all" target="_blank">
-                                        <i class="fa fa-twitter"
-                                        style="font-size: 90px;"
-                                        ></i>
-                                </a></li>
+                                    <a style="width: 150px;height: auto;border:none;"
+                                        href="https://www.twitter.com/vr_4all" target="_blank">
+                                        <i class="fa fa-twitter" style="font-size: 90px;"></i>
+                                    </a>
+                                </li>
                                 <li>
-                                <a 
-                                style="width: 150px;height: auto;border:none;"
-                                href="https://www.linkedin.com/in/jerome-graves/" target="_blank"><i
-                                            class="fa fa-linkedin"
-                                            style="font-size: 90px;"
-                                            ></i></a></li>
+                                    <a style="width: 150px;height: auto;border:none;"
+                                        href="https://www.linkedin.com/in/jerome-graves/" target="_blank"><i
+                                            class="fa fa-linkedin" style="font-size: 90px;"></i></a>
+                                </li>
 
                                 <li>
-                                    <a 
-                                style="width: 150px;height: auto;border:none;"
-                                href="https://github.com/Jerome-Graves" target="_blank"><i
-                                            class="fa fa-github"
-                                            style="font-size: 90px;"
-                                            ></i></a></li>
+                                    <a style="width: 150px;height: auto;border:none;"
+                                        href="https://github.com/Jerome-Graves" target="_blank"><i class="fa fa-github"
+                                            style="font-size: 90px;"></i></a>
+                                </li>
 
                                 <li>
-                                <a 
-                                style="width: 150px;height: auto;border:none;"
-                                href="https://www.researchgate.net/profile/Jerome_Graves" target="_blank"><i
+                                    <a style="width: 150px;height: auto;border:none;"
+                                        href="https://www.researchgate.net/profile/Jerome_Graves" target="_blank"><i
                                             class="fa fa-researchgate"
-                                            style="font-size: 90px;"
-                                            ><b>R</b><sup>G</sup></i></a></li>
+                                            style="font-size: 90px;"><b>R</b><sup>G</sup></i></a>
+                                </li>
 
                                 <li>
-                                    <a 
-                                style="width: 150px;height: auto;border:none;"
-                                href="https://hackaday.io/Jerome.Graves" target="_blank"> <i
-                                            class="fa fa-hackaday" 
-                                            style="font-size:90px"
-                                            aria-hidden="true"></i></a>
+                                    <a style="width: 150px;height: auto;border:none;"
+                                        href="https://hackaday.io/Jerome.Graves" target="_blank"> <i
+                                            class="fa fa-hackaday" style="font-size:90px" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -512,105 +540,31 @@ position:absolute;
 
     <script>
 
-
-        const createAligned = (scene, totalWidth, texture, scrollFactor) => {
-            const w = scene.textures.get(texture).getSourceImage().width
-            const count = Math.ceil(totalWidth / w) * scrollFactor
-
-            let x = 0
-            for (let i = 0; i < count; ++i) {
-                const m = scene.add.image(x, scene.scale.height, texture)
-                    .setOrigin(0, 1)
-                    .setScrollFactor(scrollFactor).setScale(4)
-
-                x += m.width
-            }
-        }
+        var mouseX = 0;
+        var mouseY = 0;
 
 
-        var config = {
-            type: Phaser.CANVAS,
-            backgroundColor: '#000000',
-            pixelArt: true,
-            anitalias: false,
-            roundPixels: false,
-            scale: {
-                mode: Phaser.Scale.RESIZE,
-                parent: 'PHASER',
-                width: 800,
-                height: 400
+        AFRAME.registerComponent("turn_head", {
+            schema: {
+                // target: { type: "selector" },
+                // speed: { type: "number" },
             },
-            dom: {
-                createContainer: true
+            init: function () { },
+
+            tick: function (time, timeDelta) {
+                // mouseX = mouseX - 50;
+                this.el.object3D.rotation.x = -mouseY;
+                this.el.object3D.rotation.y = -mouseX;
             },
-            physics: {
-                default: 'arcade',
-                arcade: {
-                    gravity: { y: 200 }
-                }
-            },
-            scene: {
-                preload: preload,
-                create: create,
-                update: update
-            }
-        };
+        });
 
-        var game = new Phaser.Game(config);
-
-        function preload() {
-            this.load.image('black', 'assets/black.jpg');
-            this.load.image('sky', 'assets/Hills Layer 01.png');
-            this.load.image('mountains', 'assets/Hills Layer 02.png');
-            this.load.image('plateau', 'assets/Hills Layer 03.png');
-            this.load.image('plants', 'assets/Hills Layer 04.png');
-            this.load.image('ground', 'assets/Hills Layer 05.png');
-            this.load.image('ground0', 'assets/Hills Layer 06.png');
-
-
-        }
-
-        function create() {
-
-            const width = this.scale.width
-            const height = this.scale.height
-            const totalWidth = width * 140
-
-
-            //
-            bg1 = this.add.image(width / 2, height, 'sky').setScrollFactor(0).setOrigin(0.5, 1).setScale(4);
-
-            // this.add.image(width * 0.25,height * 0.5, 'sky').setScrollFactor(0).setScale(2);
-            //  this.add.image(width * 0.5, height * 0.5, 'sky').setScrollFactor(0).setScale(2);
-
-
-            //createAligned(this, totalWidth, 'sky', 1);
-            createAligned(this, totalWidth, 'mountain', 0.25 / 4);
-            createAligned(this, totalWidth, 'plateau', 0.5 / 4);
-            createAligned(this, totalWidth, 'plants', 1 / 4);
-            createAligned(this, totalWidth, 'ground', 1.25 / 4);
-            createAligned(this, totalWidth, 'ground0', 1.5 / 4);
-
-            //var r1 = this.add.rectangle(0, 0,totalWidth, height*2, 0x0000ff);
-            this.r1 = this.add.image(0, 0, 'black').setScale(500);
-
-        }
-
-        function update() {
-            var pos = document.documentElement.scrollTop;
-            var speed = 2 + (pos / 250) * 25;
-            this.cameras.main.scrollX += speed;
-
-            //r1.alpha = 0;//pos/1000;
-            //r1.setFill(0);
-            this.r1.setAlpha(pos / 250);
-
-
-            if (this.cameras.main.scrollX > 40000) {
-                this.cameras.main.scrollX = 0;
-            }
-
-        }
+        window.addEventListener("mousemove", (e) => {
+            mouseX =
+                (((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
+            mouseY =
+                (((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) /
+                2;
+        });
     </script>
 
 
