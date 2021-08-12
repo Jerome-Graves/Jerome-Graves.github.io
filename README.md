@@ -6,6 +6,5 @@ Portfolio Website
 ## About
 
 - I cheated and started with a free template I found online. 
-- The header background is actually a canvas built with [Phaser.js](https://phaser.io/)
-
+- The header background is built with aframe.
 ## Todo
