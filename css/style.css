@@ -30,7 +30,8 @@ header {
   background-repeat: no-repeat;
 }
 .section_overlay {
-  background: rgba(250, 250, 250, 0.55);
+  background-image: linear-gradient(rgba(250, 250, 250, 0.55), rgba(255, 255, 240, 1));
+  
 }
 .home_text {
   padding-top: 210px;
@@ -64,8 +65,8 @@ header {
 
 /*Services*/
 .services {
-  padding-top: 96px;
-  background: rgba(250, 250, 250, 0.3);
+  padding-top: 96px; 
+  background-image: linear-gradient( rgba(255, 255, 240, 1),rgba(250, 250, 250, 0.55));
 }
 .services .container {
   border-bottom: 1px solid #ddd;
