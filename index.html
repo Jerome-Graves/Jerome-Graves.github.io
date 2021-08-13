@@ -52,47 +52,59 @@
 
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.19.0/dist/phaser-arcade-physics.min.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="js/look-controls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script>
 
-        var targetAngX = 0;
-        var targetAngY = 0;
-        var count = 0;
-        const turnVal = 0.02;
+        var target = {
+            targetAngX:0,
+            targetAngY:0,
+            turnVal:0.02,
+            targetPosY:0
+        }
+
+        var mouseAngX = 0;
+        var mouseAngY = 0;
+
+        anime({
+            targets: target,
+            easing: 'easeInOutQuad',
+            loop: true,
+            direction: 'alternate',
+            duration: 3000,
+            targetPosY:0.2,
+            });
 
 
         AFRAME.registerComponent("turn_head", {
             schema: {},
 
             tick: function (time, timeDelta) {
-                // mouseX = mouseX - 50;
+
+                this.el.object3D.position.y = target.targetPosY;
+                difX  = Math.abs(this.el.object3D.rotation.x - mouseAngX )*5;
+                difY  = Math.abs(this.el.object3D.rotation.y - mouseAngY )*5;
+
+                if (this.el.object3D.rotation.x < mouseAngX-target.turnVal*difX )
+                    this.el.object3D.rotation.x += target.turnVal*difX;
+                else if (this.el.object3D.rotation.x > mouseAngX+target.turnVal*difX)
+                    this.el.object3D.rotation.x -= target.turnVal*difX;
                 
-                count = count > 359 ? 0 : count += 1;
-                //this.el.object3D.rotation.x = targetAngY;
-                //this.el.object3D.rotation.y = targetAngX;
-                this.el.object3D.position.y += (Math.sin(count*2*Math.PI/360))/400;  
-                
-                if (this.el.object3D.rotation.x < targetAngY-turnVal )
-                    this.el.object3D.rotation.x += turnVal;
-                else if (this.el.object3D.rotation.x > targetAngY+turnVal)
-                    this.el.object3D.rotation.x -= turnVal;
-                
-                if (this.el.object3D.rotation.y < targetAngX-turnVal )
-                    this.el.object3D.rotation.y += turnVal;
-                else if (this.el.object3D.rotation.y > targetAngX+turnVal)
-                    this.el.object3D.rotation.y -= turnVal;
+                if (this.el.object3D.rotation.y < mouseAngY-target.turnVal*difY )
+                    this.el.object3D.rotation.y += target.turnVal*difY;
+                else if (this.el.object3D.rotation.y > mouseAngY+target.turnVal*difY)
+                  this.el.object3D.rotation.y -= target.turnVal*difY;
                 
                 },
         });
 
-        //window.onscroll = function () { window.scrollTo(0, 0); };
+
         window.addEventListener("mousemove", (e) => {
-            targetAngX = -(((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
-            targetAngY = -(((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
+            mouseAngY = -(((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
+            mouseAngX = -(((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
         });
         window.addEventListener("touchmove", (e) => {
-            targetAngX = -(((window.innerWidth -e.changedTouches[0].clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
-            targetAngY = -(((window.innerHeight - e.changedTouches[0].clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
+            mouseAngY = -(((window.innerWidth -e.changedTouches[0].clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
+            mouseAngX = -(((window.innerHeight - e.changedTouches[0].clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
         });
     </script>
 </head>
@@ -125,12 +137,13 @@
 
 
             <div style="width: 100%;height:150%;position: absolute;left:50%;top:65%;z-index:-110;">
-                <a-scene embedded renderer="antialias: false;
+                <a-scene 
+                embedded 
+                device-orientation-permission-ui="enabled: false"
+                renderer="antialias: false;
                 colorManagement: false;
                 sortObjects: false;
                 physicallyCorrectLights: false;
-                maxCanvasWidth: 128;
-                maxCanvasHeight: 128;
              ">
                     
                     <a-camera position="0 0 0" fov="40" near="1" wasd-controls-enabled="false">
