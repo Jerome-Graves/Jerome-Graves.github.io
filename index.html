@@ -56,10 +56,10 @@
     <script>
 
         var target = {
-            targetAngX:0,
-            targetAngY:0,
-            turnVal:0.02,
-            targetPosY:0
+            targetAngX: 0,
+            targetAngY: 0,
+            turnVal: 0.02,
+            targetPosY: 0
         }
 
         var mouseAngX = 0;
@@ -71,8 +71,8 @@
             loop: true,
             direction: 'alternate',
             duration: 3000,
-            targetPosY:0.2,
-            });
+            targetPosY: 0.2,
+        });
 
 
         AFRAME.registerComponent("turn_head", {
@@ -81,20 +81,20 @@
             tick: function (time, timeDelta) {
 
                 this.el.object3D.position.y = target.targetPosY;
-                difX  = Math.abs(this.el.object3D.rotation.x - mouseAngX )*5;
-                difY  = Math.abs(this.el.object3D.rotation.y - mouseAngY )*5;
+                difX = Math.abs(this.el.object3D.rotation.x - mouseAngX) * 5;
+                difY = Math.abs(this.el.object3D.rotation.y - mouseAngY) * 5;
 
-                if (this.el.object3D.rotation.x < mouseAngX-target.turnVal*difX )
-                    this.el.object3D.rotation.x += target.turnVal*difX;
-                else if (this.el.object3D.rotation.x > mouseAngX+target.turnVal*difX)
-                    this.el.object3D.rotation.x -= target.turnVal*difX;
-                
-                if (this.el.object3D.rotation.y < mouseAngY-target.turnVal*difY )
-                    this.el.object3D.rotation.y += target.turnVal*difY;
-                else if (this.el.object3D.rotation.y > mouseAngY+target.turnVal*difY)
-                  this.el.object3D.rotation.y -= target.turnVal*difY;
-                
-                },
+                if (this.el.object3D.rotation.x < mouseAngX - target.turnVal * difX)
+                    this.el.object3D.rotation.x += target.turnVal * difX;
+                else if (this.el.object3D.rotation.x > mouseAngX + target.turnVal * difX)
+                    this.el.object3D.rotation.x -= target.turnVal * difX;
+
+                if (this.el.object3D.rotation.y < mouseAngY - target.turnVal * difY)
+                    this.el.object3D.rotation.y += target.turnVal * difY;
+                else if (this.el.object3D.rotation.y > mouseAngY + target.turnVal * difY)
+                    this.el.object3D.rotation.y -= target.turnVal * difY;
+
+            },
         });
 
 
@@ -103,7 +103,7 @@
             mouseAngX = -(((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
         });
         window.addEventListener("touchmove", (e) => {
-            mouseAngY = -(((window.innerWidth -e.changedTouches[0].clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
+            mouseAngY = -(((window.innerWidth - e.changedTouches[0].clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
             mouseAngX = -(((window.innerHeight - e.changedTouches[0].clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
         });
     </script>
@@ -126,36 +126,29 @@
 
 
         <div class="section_overlay" style="overflow: hidden;
-         top:0px; position:relative;height:100vh "
-         
-         >
+         top:0px; position:relative;height:100vh ">
 
 
-            <a style="font-size:20px;position:absolute; bottom:0% ; z-index: 10000;"
-                href="https://codesandbox.io/s/github/Jerome-Graves/aframe-vue-elephant-head" target="_blank">view code</a>
+
 
 
 
             <div style="width: 100%;height:150%;position: absolute;left:50%;top:65%;z-index:-110;">
-                <a-scene 
-                embedded 
-                device-orientation-permission-ui="enabled: false"
-                renderer="antialias: false;
+                <a-scene embedded device-orientation-permission-ui="enabled: false" renderer="antialias: false;
                 colorManagement: false;
                 sortObjects: false;
                 physicallyCorrectLights: false;
              ">
-                    
+
                     <a-camera position="0 0 0" fov="40" near="1" wasd-controls-enabled="false">
-                    <a-entity turn_head="" position="0 0 -40">
-                        <a-entity position="0 -6 0"  rotation="0 0 0" scale="0.3 0.3 0.3"
-                            gltf-model="https://jeromegraves.com/assets/elephant.glb" 
-                            >
-                            <a-cursor></a-cursor>
+                        <a-entity turn_head="" position="0 0 -40">
+                            <a-entity position="-5 -10 0" rotation="0 0 0" scale="0.03 0.03 0.03"
+                                gltf-model="assets/robot2.glb">
+                                <a-cursor></a-cursor>
+                            </a-entity>
                         </a-entity>
-                    </a-entity>
                     </a-camera>
-                    
+
                 </a-scene>
             </div>
 
@@ -178,14 +171,13 @@
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+                        style="text-transform: lowercase;">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#HOME">Home</a></li>
-                            <li><a href="#SERVICE">Services</a></li>
-                            <li><a href="#ABOUT">About</a></li>
-                            <li><a href="#TESTIMONIAL">Testimonial</a></li>
-                            <li><a href="#WORK">Work</a></li>
-                            <li><a href="#CONTACT">Contact</a></li>
+                            <li><a href="#SERVICE" style="text-transform: lowercase; font-size: 18px;">Skills</a></li>
+                            <li><a href="#ABOUT" style="text-transform: lowercase; font-size: 18px;">About</a></li>
+                            <li><a href="#WORK" style="text-transform: lowercase; font-size: 18px;">Projects</a></li>
+                            <li><a href="#CONTACT" style="text-transform: lowercase; font-size: 18px;">Contact</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container -->
@@ -195,28 +187,15 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="home_text wow fadeInUp animated">
-                            <h2>Jerome Graves</h2>
-                            <strong>
-                                <p>Electronic & Software</p>
-                                <p>Engineer
-                            </strong></p>
-
+                            <h2 style="padding-top: 15%;">Jerome Graves</h2>
                             <img src="images/shape.png" alt="">
+                            <h2 style="font-size: 75px;font-weight: 100;opacity:  75%;">Robotics Engineer</h2>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="scroll_down">
-                            <a href="#SERVICE"><img src="images/scroll.png" alt=""></a>
-                            <h4>Scroll Down</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
         </section>
     </div>
@@ -225,22 +204,53 @@
     <section class="services" id="SERVICE">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center" style="float:center;">
+
+                <div class="col-md-3 text-center" style="float:center;">
                     <div class="single_service wow fadeInUp">
-                        <i class="fa fa-plug"></i>
-                        <h2>Electronic Engineer</h2>
-                        <p>Electronic design engineer with<br> experience with firmware and mechatronic design.<br>
-                            <b>Embeded systems (LINUX, WIN CE)<br>FPGA Design (VHDL, Verilog)<br>Circuit Board
-                                Design<br>C++</b>
+                        <i class="fa fa-code"></i>
+                        <h2>Mechanical Design</h2>
+                        <p> Experience with mechanical and mechatronic design (<b>robotics</b>, <b>industrial
+                                machines</b>).<br> Experience with MCAD sofware (<b>fusion360</b>), Different
+                            fabrication techniques (<b>3D printing</b>, <b>lazer cutting</b>, <b>3-axis milling</b>
+                            )<br>
+
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center" style="float:center;">
+
+                <div class="col-md-3 text-center" style="float:center;">
                     <div class="single_service wow fadeInUp">
                         <i class="fa fa-code"></i>
-                        <h2>Software Development</h2>
-                        <p>Experience with Full Stack development.<br><b>JavaScript, HTML,
-                                CSS<br>node.js<br>Firebase<br>Google Cloud Platform </b></p>
+                        <h2>Electronic Design</h2>
+                        <p>Experience with designing digital systems using <b>micro-controllers</b>, <b>FPGAs</b>, and
+                            <b>SOCs</b>. Experience with ECAD tools (<b>Autodesk Eagle</b>), soldering, testing and
+                            develoment boards.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 text-center" style="float:center;">
+                    <div class="single_service wow fadeInUp">
+                        <i class="fa fa-code"></i>
+                        <h2>Embeded Software Development</h2>
+                        <p>Experience with developing real-time systems using <b>C</b>, <b>C++</b> and <b>VHDL</b>.
+                            Experince with <b>WinCE</b> and <b>Linux</b> operating systems. Experince with wired and
+                            wireless comunication protocols(<b>UDP</b>, <b>HTTP/IP</b>, <b>I2C</b>, <b>SPI</b>)</p>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 text-center" style="float:center;">
+                    <div class="single_service wow fadeInUp">
+                        <i class="fa fa-code"></i>
+                        <h2>Robotic System Development</h2>
+                        <p>Experience with <b>ROS </b>(robotic operating system) using <b>C++</b> and <b>Python</b>.
+                            Intergating <b>sensors</b>, robotic hardware and creating contrtol systems. Experince with
+                            <b>Path planning</b>, <b>vision systems</b>, <b>manipulators</b>, <b>Inverse kinematics</b>,
+                            <b>mobile robotics</b>
+                        </p>
                     </div>
                 </div>
 
@@ -264,69 +274,30 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4  wow fadeInUp animated">
-                    <div class="single_progress_bar">
-                        <h2>ELECTRONIC ENGINEER -50%</h2>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 50%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_progress_bar">
-                        <h2>SOFTWARE DEVELOPER - 50%</h2>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 50%;">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </div>
 
-
-
-
-                </div>
-            </div>
             <div class="col-md-4  wow fadeInUp animated">
-                <p class="about_us_p"><strong>Electronic engineer and Software developer</strong>. Experience in
-                    <strong>digital
-                        and analogue circuit design</strong>, <strong>mechatronics design&nbsp;</strong>and
-                    <strong>power electronics</strong> and many technical packages. <strong>Low-level and high-level
-                        programming languages</strong>. Well-versed in technology and writing code to create systems
-                    that are <strong>reliable and user-friendly</strong>. A skilled leader who has the proven ability to
-                    <strong>motivate</strong>, <strong>educate,</strong> and <strong>manage a team</strong> to develop
-                    <strong>hardware and software</strong> systems and <strong>effectively track changes</strong>.
-                    <strong>Confident communicator</strong>, <strong>strategic thinker</strong>, and <strong>innovative
-                        creator</strong> to develop systems that are customized to meet a company&rsquo;s
-                    <strong>organizational needs</strong>, highlight their <strong>core competencies</strong>, and
-                    further their success.</br> for more information see my <a title="linkedin"
+                <p class="about_us_p">
+
+                    A <strong>Robotics engineer</strong> from <strong>London, UK</strong>. With experience with
+                    <strong>robotic systems</strong>,
+                    <strong>digital</strong> and <strong>analogue circuit design</strong>, <strong>mechatronics
+                        design&nbsp;</strong>, <strong>low-level</strong> and <strong>high-level
+                    </strong> programming languages. Well-versed in technology and writing code to create systems
+                    that are <strong>reliable and user-friendly</strong>. With the proven ability to develop
+                    <strong>hardware</strong> <strong>software</strong> systems and <strong>effectively track
+                        changes</strong>.
+                    A <strong>Confident communicator</strong>, <strong>strategic thinker</strong>, and
+                    <strong>innovative
+                        creator</strong> ready to develop cutting edge systems.
+                    </br> for more information see my <a title="linkedin"
                         href="https://www.linkedin.com/in/jerome-graves/" target="_blank" rel="noopener">linkedin</a>
                 </p>
             </div>
             <div class="col-md-4  wow fadeInUp animated">
-                <p class="about_us_p">From&nbsp;<strong>London, UK</strong>. My history with technology starts at age 10
-                    when my mother, a <strong>C++ developer</strong> at the time, taught me how to code. At 11 a friend
-                    of mine introduced me to <strong>HTML and web design</strong>. I kept up my love of coding and
-                    technology
-                    taught myself anything and everything I thought was interesting in the subject. This includes
-                    <strong>C++,
-                        Visual Basic, JavaScript, Vue.js, OpenCV / OpenMV, Python, MATLAB, VHDL, Verilog, Pure Data,
-                        super collider.</strong>
-                    Please see my <a title="linkedin" href="https://github.com/Jerome-Graves" target="_blank"
-                        rel="noopener">Github</a> for more information.
-                    </br> I am also, a big fan and involved in many <strong>creative</strong> coding and technology
-                    projects.
-
-                </p>
-            </div>
-            <div class="col-md-4  wow fadeInUp animated">
                 <p class="about_us_p">I graduated with a <strong>1st class</strong> degree in <strong>electronic and
-                        electrical engineering</strong> from <strong>London South Bank University</strong>. I loved my
-                    experience at university and as a member of the <strong>robotics society,</strong>&nbsp;I had the
-                    pleasure of representing the university in&nbsp;<a
+                        electrical engineering</strong> from <strong>London South Bank University</strong> in
+                    <strong>2020</strong>. As a member of the <strong>robotics society,</strong>&nbsp;I had the
+                    pleasure of representing the university in the &nbsp;<a
                         title="Engineering for People (EfP) Design Challenge"
                         href="https://www.lsbu.ac.uk/about-us/news/students-engineering-design-challenge-national-final"
                         target="_blank" rel="noopener">Engineering for People (EfP) Design Challenge</a>, <a
@@ -339,125 +310,74 @@
                     final year project was titled <a title="Quadrupedal robotic Platform for research on legged motion"
                         href="https://www.researchgate.net/project/Quadrupedal-Robotic-Platform-For-Research-on-Legged-Motion-Planning"
                         target="_blank" rel="noopener">Quadrupedal robotic Platform for research on legged motion</a>.
-                    It was a mechatronic project that required me to design and build a 4 legged robot and control
-                    software using <strong>ROS</strong> (Robotic Operating System) that would allow for traversal over
-                    uneven terrain. </br> I started working at <strong>LSBU</strong> as an <strong>associate
-                        researcher</strong><strong>&nbsp;working on thermal transfer printers.&nbsp;</strong>
+                    It was a mechatronic project that required me to <strong>design</strong> and <strong>build</strong>
+                    a <strong>4 legged robot</strong> and <strong>control
+                        software</strong> that would traverse
+                    over uneven terrain, using <strong>ROS</strong> (Robotic Operating System).
+                </p>
+            </div>
+
+            <div class="col-md-4  wow fadeInUp animated">
+                <p class="about_us_p">I worked at <strong>London southbank unversity</strong>
+                    (<strong>2021-2022</strong>) as an <strong> associate reseacher</strong>, in the mechanical
+                    engineering department. My role required me to <strong>design a novel machine (thermal transfer
+                        printer)</strong> for the <strong> packaging </strong> industry with input from both
+                    <strong>academic</strong> and <strong>industrial</strong> partners.
                 </p>
             </div>
         </div>
         </div>
     </section>
 
-
-    <section class="testimonial text-center wow fadeInUp animated" id="TESTIMONIAL">
-        <div class="container">
-            <div class="icon">
-                <i class="fa fa-quote-left" style="color:#f73b56;"></i>
-            </div>
-            <div class="owl-carousel">
-                <div class="single_testimonial text-center wow fadeInUp animated">
-                    <p>I had the pleasure to work with Jerome in several group projects. He is an extremely innovative
-                        and effective teammate. His creativity and ability to easily master all types of programming
-                        software are highly impressive.</p>
-                    <h4><b>-<a href="https://www.linkedin.com/in/igor-silva-211023180/">Igor Silva</a> </b><br>
-                        Technical Engineer @ ISS</h4>
-                </div>
-                <div class="single_testimonial text-center">
-                    <p>LSBU’s Sava Otasevic, Samuel Mitchell and Jerome Graves, students on the BEng Electrical and
-                        Electronic Engineering course, secured their place in the semi-final for their innovative
-                        mycelium farm which creates new, usable material by repurposing organic and agricultural waste
-                        products.</p>
-                    <h4>-<a
-                            href="https://www.lsbu.ac.uk/about-us/news/students-engineering-design-challenge-national-final">LSBU</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="work_area" id="WORK">
+    <section clas="work_area" id="WORK">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="work_title  wow fadeInUp animated">
                         <h1>Projects</h1>
+                        <p style="font-size: 15px;margin-bottom: 10px;"> Due to the nature of <strong>R&D</strong>, I
+                            cannot show work I have done during my tenure as a <strong>professional</strong>. <br>For
+                            examples of my work please see the following selection of <strong>open source</strong> projects. <br>
+                            For more, see my <a href="https://www.github.com/Jerome-Graves">Github</a>.</p>
                         <img src="images/shape.png" alt="">
-
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="container-fluid">
+
+
             <div class="row">
-                <div class="col-md-4 no_padding">
-                    <div class="single_image">
-                        <img src="images/w1.png" alt="">
-                        <div class="image_overlay">
-                            <a href="https://braincake.school" target="_blank">View Full Project</a>
-                            <h2 style="padding:2px;padding-bottom:20px;">BrainCake.School</h2>
-                            <h4 style="margin:2px;"><b>Full Stack developer</b> <br>
-                                VUE.js | Firebase | Google Cloud</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 no_padding">
-                    <div class="single_image">
-                        <img src="images/w2.png" alt="">
-                        <div class="image_overlay">
-                            <a href="https://volleyballmusic.com/Game" target="_blank">View Full Project</a>
-                            <h2 style="padding:2px;padding-bottom:20px;">Volleyball Game</h2>
-                            <h4 style="margin:2px;"><b>Full Stack developer</b> <br>
-                                Gamemaker Studio | VUE.js | FaceBook API | Firebase</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 no_padding">
-                    <div class="single_image">
-                        <img src="images/w3.png" alt="">
-                        <div class="image_overlay">
-                            <a href="https://github.com/Jerome-Graves/RobotDog" target="_blank">View Full Project</a>
-                            <h2 style="padding:2px;padding-bottom:20px;">Quadrupedal robotic Platform</h2>
-                            <h4 style="margin:2px;"><b>Final Year Degree Project (EEE)</b> <br>
-                                ROS | C++ | Python | Fusion360 | Electronic Circuit Design</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row pad_top">
 
                 <div class="col-md-4 no_padding">
-                    <div class="single_image">
-                        <img src="images/w5.png" alt="">
-                        <div class="image_overlay">
-                            <a href="https://www.researchgate.net/profile/Jerome_Graves" target="_blank">In Progress</a>
-                            <h2 style="padding:2px;padding-bottom:20px;">Thermal Transfer Printers </h2>
-                            <h4 style="margin:2px;"><b>Associate Reseacher</b> <br>
-                                C++ | VHDL | Electronic Design| Mechanical Design </h4>
+                   
+                </div>
+
+                <div class="col-md-4 no_padding" >
+                    <div class="single_image"  >
+                        <img src="images/w7.png" alt=""  style="border:3px solid #f73b56;border-radius: 5%;">
+                        <div class="image_overlay" style="border-radius: 5%; opacity:100%;background-color: #ffffffa6;" style="color: black;">
+                            <a style="color: #f73b56;" href="https://github.com/Jerome-Graves/yertle" target="_blank">View Project</a>
+                            <h2 style="color: black;padding:2px;padding-bottom:50px; color: black;">Yertle <br></h2>
+                            <h4 style="color: black;margin:10px;"><b> A quadrupedal robot capable of traveling across a variety of natural and industial terrains for NDT (non destructive testing) purposes.</b> <br>
+                                ROS | C++ | Python | Fusion360 | Electronic Design | Mechanical design | control software| Vision sensor intergation</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 no_padding">
-                    <div class="single_image last_padding">
-                        <img src="images/w6.png" alt="">
-                        <div class="image_overlay">
-                            <a href="https://piwars.org/" target="_blank">See More</a>
-
-                            <h2 style="padding:2px;padding-bottom:20px;">Autonomous Robot</h2>
-                            <h4 style="margin:2px;"><b>PI wars 2020</b> <br>
-                                Python | OpenCV | Electronic Design| Mechanical Design </h4>
-                        </div>
-                    </div>
+                 
                 </div>
+
             </div>
+
+
         </div>
     </section>
 
 
     <section class="contact" id="CONTACT">
-        <div class="container">
+        <div class="container" style="margin-top: 10%;">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="contact_title  wow fadeInUp animated">
@@ -468,17 +388,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3  wow fadeInUP animated">
 
-                    <div class="single_contact_info">
-                        <h2>Email Me</h2>
-                        <p><a href="mailto:jerome.a.graves@gmail.com">jerome.a.graves@gmail.com</a> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
 
@@ -496,14 +406,9 @@
                 <div class="row">
                     <div class="col-md-12 text-center   wow fadeInUp animated">
                         <div class="social">
-                            <h2 style="font-size: 20px;">Follow Me</h2>
+                            <h2 style="font-size: 20px;"></h2>
                             <ul class="icon_list">
-                                <li>
-                                    <a style="width: 150px;height: auto;border:none;"
-                                        href="https://www.twitter.com/vr_4all" target="_blank">
-                                        <i class="fa fa-twitter" style="font-size: 90px;"></i>
-                                    </a>
-                                </li>
+
                                 <li>
                                     <a style="width: 150px;height: auto;border:none;"
                                         href="https://www.linkedin.com/in/jerome-graves/" target="_blank"><i
@@ -525,9 +430,10 @@
 
                                 <li>
                                     <a style="width: 150px;height: auto;border:none;"
-                                        href="https://hackaday.io/Jerome.Graves" target="_blank"> <i
-                                            class="fa fa-hackaday" style="font-size:90px" aria-hidden="true"></i></a>
+                                        href="mailto:jerome.a.graves@gmail.com" target="_blank"><i
+                                            class="fa fa-envelope" style="font-size: 90px;"></i></a>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -537,7 +443,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="copyright_text   wow fadeInUp animated">
-                            <p>&copy; Jerome Graves 2021
+                            <p>&copy; Jerome Graves 2022
 
                         </div>
                     </div>
