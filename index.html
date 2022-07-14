@@ -134,23 +134,20 @@
 
 
             <div style="width: 100%;height:150%;position: absolute;left:50%;top:65%;z-index:-110;">
-                <a-scene embedded device-orientation-permission-ui="enabled: false" 
-                
-                renderer="antialias: true;
+                <a-scene embedded device-orientation-permission-ui="enabled: false" renderer="antialias: true;
                 colorManagement: true;
                 sortObjects: true;
                 physicallyCorrectLights: true;
                 maxCanvasWidth: 50;
-                maxCanvasHeight: 50;"
-             ">
+                maxCanvasHeight: 50;" ">
 
-                    <a-camera position="0 0 0" fov="40" near="1" wasd-controls-enabled="false">
-                        <a-entity turn_head="" position="0 0 -40">
-                            <a-entity material="color: red" position="0 -5 0" rotation="0 0 0" scale="0.05 0.05 0.05"
-                                gltf-model="assets/yertle.glb">
-                                <a-cursor></a-cursor>
-                            </a-entity>
+                    <a-camera position=" 0 0 0" fov="40" near="1" wasd-controls-enabled="false">
+                    <a-entity turn_head="" position="0 0 -40">
+                        <a-entity material="color: red" position="0 -5 0" rotation="0 0 0" scale="0.05 0.05 0.05"
+                            gltf-model="assets/yertle.glb">
+                            <a-cursor></a-cursor>
                         </a-entity>
+                    </a-entity>
                     </a-camera>
 
                 </a-scene>
@@ -339,111 +336,97 @@
                 <div class="col-md-12 text-center">
                     <div class="work_title  wow fadeInUp animated">
                         <h1>Projects</h1>
-                        <p style="font-size: 15px;margin-bottom: 10px;"> 
+                        <p style="font-size: 15px;margin-bottom: 10px;">
                             <!-- For examples of my work please see the following selection of <strong>open source</strong> projects. <br>
                             For more, 
                             -->
-                            See my <a href="https://www.github.com/Jerome-Graves">Github</a>.</p>
+                            See my <a href="https://www.github.com/Jerome-Graves">Github</a>.
+                        </p>
                         <img src="images/shape.png" alt="">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container-fluid" style="display: inline-block;
-        align-items:center;
-        justify-content: center;">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-md-6 text-center" style="float:center;">
 
-   
+                    <div class="single_service wow fadeInUp">
+                        <img src="images/undergradRobot.jpg" alt=""
+                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
+                        <h2>Quadrupedal Robotic Platform For Research on Legged Motion Planning</h2>
+                        <h3 style="color: #f73b56;">Undergraduate Project</h3>
+                        <p> The design and creation of a quadrupedal robotic platform and implementation of robotic
+                            control algorithms for legged motion planning using ROS (robotic operations system).
+                        </p>
 
-                <div class="col-md-10 no_padding center" style="margin:10% ;">
-                    <div class="single_image center"  >
-                        <img src="images/undergradRobot.jpg" alt=""  style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;">
-                        
-                        <div class="image_overlay" style="border-radius: 5%; opacity:100%;background-color: #ffffffa6;padding:5%;" style="color: black;">
-                            <h1 style="font-size:25px ">Quadrupedal Robotic Platform For Research on Legged Motion Planning</h1>
-                            <h4 style="color: black; color: black;text-align: center;">UnderGraduate Research Paper <br></h2>
-                                <p>The design and creation of a quadrupedal robotic platform and implementation of robotic control algorithms for legged motion planning using ROS (robotic operations system).
-                           </p>
-                            <a style="color: #f73b56; text-align: center;display: flex;
-                            align-items: center;
-                            justify-content: center;" href="images\QuadrupedalRoboticPlatformForResearchonLeggedMotionPlanningpaper-compressed.pdf" target="_blank">View Project</a>
-                            <h4 style="color: black;margin:10px;">
-                        
-                            </div>
-                    
-                    
+                        <a style="color: #f73b56;"
+                            href="images\QuadrupedalRoboticPlatformForResearchonLeggedMotionPlanningpaper-compressed.pdf"
+                            target="_blank">View Project</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center" style="float:center;">
+
+                    <div class="single_service wow fadeInUp">
+                        <img src="images/w7.png" alt=""
+                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
+                        <h2>Yertle: A 3D Printed Quadrupedal Robot for Locomotion Research</h2>
+                        <h3 style="color: #f73b56;">Open-source Project</h3>
+                        <p> A continuation of my undergraduate project increasing its capability while reducing build
+                            cost.
+                        </p>
+
+                        <a style="color: #f73b56;" href="https://github.com/Jerome-Graves/yertle" target="_blank">View
+                            Project</a>
                     </div>
                 </div>
 
 
-                <div class="col-md-10 no_padding center" style="margin:10% ;">
-                    <div class="single_image center"  >
-                        <img src="images/w7.png" alt=""  style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;">
-                        
-                        <div class="image_overlay" style="border-radius: 5%; opacity:100%;background-color: #ffffffa6;padding:5%;" style="color: black;">
-                            <h1 style="font-size:25px ">Yertle: A 3D Printed Quadrupedal Robot for Locomotion Research</h1>
-                            <h4 style="color: black; color: black;text-align: center;">Open-source Project <br></h2>
-                                <p>A continuation of my undergraduate project increasing its capability while reducing build cost.
-                           </p>
-                            <a style="color: #f73b56; text-align: center;display: flex;
-                            align-items: center;
-                            justify-content: center;" href="https://github.com/Jerome-Graves/yertle" target="_blank">View Project</a>
-                            <h4 style="color: black;margin:10px;">
-                        
-                            </div>
-                    
-                    
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 text-center" style="float:center;">
+
+                    <div class="single_service wow fadeInUp">
+                        <img src="images/lazbot.png" alt=""
+                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
+                        <h2>LazBot: A High-frequency UV Scanning Laser Marker</h2>
+                        <h3 style="color: #f73b56;">Open-source Project </h3>
+                        <p> Laz bot is is a high-frequency, UV, galvo laser marker designed to mark thin plastic and
+                            paper materials without excessive burning or deformation of the substrate material.
+                            It operates at high-speeds with a higher lever of accuracy that traditional marking.
+                        </p>
+
+                        <a style="color: #f73b56;" href="https://github.com/Jerome-Graves" target="_blank">View
+                            Project</a>
                     </div>
                 </div>
 
-                <div class="col-md-10 no_padding center" style="margin:10% ;">
-                    <div class="single_image center"  >
-                        <img src="images/foil.jpg" alt=""  style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;">
-                        
-                        <div class="image_overlay" style="border-radius: 5%; opacity:100%;background-color: #ffffffa6;padding:5%;" style="color: black;">
-                            <h1 style="font-size:25px ">The Coding Industry: An Industry Retrospective and Technological Forecast.</h1>
-                            <h4 style="color: black; color: black;text-align: center;">White Paper (Pre-Print)<br></h2>
-                                <p> This white paper is aimed at people who are interesting in coding, searching for information about the technology used today and the implications modern research might have on the industry. It presents the limitations and inefficiencies of the current coding technologies and gives use cases for more efficient and cost-effective technologies
+                <div class="col-md-6 text-center" style="float:center;">
 
-                           </p>
-                            <a style="color: #f73b56; text-align: center;display: flex;
-                            align-items: center;
-                            justify-content: center;" href="https://docs.google.com/document/d/1kIF75V6o15Re67BxUbHOQxilIWPBL5mudfkMzBEAs3I/edit?usp=sharing" target="_blank">View Project</a>
-                            <h4 style="color: black;margin:10px;">
-                        
-                            </div>
-                    
-                    
+                    <div class="single_service wow fadeInUp">
+                        <img src="images/foil.jpg" alt=""
+                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
+                        <h2>The Coding Industry: An Industry Retrospective and Technological Forecast.</h2>
+                        <h3 style="color: #f73b56;">White Paper (Pre-Print)</h3>
+                        <p> This white paper is aimed at people who are interesting in coding, searching for information
+                            about the technology used today and the implications modern research might have on the
+                            industry. It presents the limitations and inefficiencies of the current coding technologies
+                            and gives use cases for more efficient and cost-effective technologies
+                        </p>
+
+                        <a style="color: #f73b56;"
+                            href="https://docs.google.com/document/d/1kIF75V6o15Re67BxUbHOQxilIWPBL5mudfkMzBEAs3I/edit?usp=sharing"
+                            target="_blank">View Project</a>
                     </div>
                 </div>
 
-                <div class="col-md-10 no_padding center" style="margin:10% ;">
-                    <div class="single_image center"  >
-                        <img src="images/lazbot.png" alt=""  style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;">
-                        
-                        <div class="image_overlay" style="border-radius: 5%; opacity:100%;background-color: #ffffffa6;padding:5%;" style="color: black;">
-                            <h1 style="font-size:25px ">LazBot: A High-frequency UV Scanning Laser Marker</h1>
-                            <h4 style="color: black; color: black;text-align: center;">Open-source Project <br></h2>
-                                <p> Laz bot is is a high-frequency, UV, galvo laser marker designed to mark thin plastic and paper materials without excessive burning or deformation of the substrate material.
-                                    It operates at high-speeds with a higher lever of accuracy that traditional marking.  
-                           </p>
-                            <a style="color: #f73b56; text-align: center;display: flex;
-                            align-items: center;
-                            justify-content: center;" href="https://github.com/Jerome-Graves/" target="_blank">View Project</a>
-                            <h4 style="color: black;margin:10px;">
-                        
-                            </div>
-                    
-                    
-                    </div>
-                </div>
 
-      
-
-
-        </div>
+            </div>
     </section>
 
 
