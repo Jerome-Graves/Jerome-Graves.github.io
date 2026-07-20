@@ -2,573 +2,740 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="images/favicon.png">
-    <meta name="description" content="Engineer based in London, UK ">
-    <meta name="keywords"
-        content="Jerome Graves, jerome graves, web developer, electronic engineer, mechatronic engineer, full stack, full stack developer, front end, front-end, C++, javascript, python, FPGA, VHDL, Verilog, VHL, arduino, PIC, SOC, robotics engineer, robotics, robots, robot arm, python,">
-    <meta name="author" content="Jerome Graves">
-    <meta name="description" content="Jerome Graves, electronic and software engineering!" />
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jerome Graves | Engineer</title>
-    <!-- Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <title>Jerome Graves | R&amp;D Engineer</title>
+    <meta name="description"
+        content="Jerome Graves, R&D engineer in London. Ultrasonics, robotics, machine vision and embedded systems. PhD in 3D ultrasound imaging.">
+    <meta name="author" content="Jerome Graves">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="canonical" href="https://jeromegraves.com/">
+    <meta property="og:title" content="Jerome Graves | R&D Engineer">
+    <meta property="og:description"
+        content="R&D engineer in London. Ultrasonics, robotics, machine vision and embedded systems.">
+    <meta property="og:image" content="https://jeromegraves.com/images/fabric_analyser.jpg">
+    <meta property="og:url" content="https://jeromegraves.com/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jerome Graves",
+        "jobTitle": "Research and Development Engineer",
+        "description": "R&D engineer in London. Ultrasonics, robotics, machine vision and embedded systems. PhD in 3D ultrasound imaging.",
+        "url": "https://jeromegraves.com/",
+        "image": "https://jeromegraves.com/images/photo.jpg",
+        "email": "mailto:jerome.a.graves@gmail.com",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "London South Bank University"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressCountry": "GB"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/jerome-graves/",
+            "https://github.com/Jerome-Graves",
+            "https://www.researchgate.net/profile/Jerome_Graves",
+            "https://orcid.org/0000-0002-7789-4167"
+        ]
+    }
+    </script>
 
-    <!-- Font Awesome -->
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
-        integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <!-- Preloader -->
-    <link rel="stylesheet" href="css/preloader.css" type="text/css" media="screen, print" />
-
-    <!-- Icon Font-->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.css">
-    <!-- Animate CSS-->
-    <link rel="stylesheet" href="css/animate.css">
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-
-    <!-- Style -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- Responsive CSS -->
-    <link href="css/responsive.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="js/lte-ie7.js"></script>
-	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.19.0/dist/phaser-arcade-physics.min.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
-    <script>
-
-        var target = {
-            targetAngX: 0,
-            targetAngY: 0,
-            turnVal: 0.02,
-            targetPosY: 0
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-alt: #f6f7f9;
+            --text: #1c2127;
+            --muted: #5b6672;
+            --accent: #1d7a4f;
+            --line: #e4e7eb;
         }
 
-        var mouseAngX = 0;
-        var mouseAngY = 0;
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #14171b;
+                --bg-alt: #1b1f25;
+                --text: #e8eaed;
+                --muted: #9aa4af;
+                --accent: #4ecb8d;
+                --line: #2a2f36;
+            }
+        }
 
-        anime({
-            targets: target,
-            easing: 'easeInOutQuad',
-            loop: true,
-            direction: 'alternate',
-            duration: 3000,
-            targetPosY: 0.2,
-        });
+        :root[data-theme="dark"] {
+            --bg: #14171b;
+            --bg-alt: #1b1f25;
+            --text: #e8eaed;
+            --muted: #9aa4af;
+            --accent: #4ecb8d;
+            --line: #2a2f36;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        AFRAME.registerComponent("turn_head", {
-            schema: {},
+        html {
+            scroll-behavior: smooth;
+        }
 
-            tick: function (time, timeDelta) {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 17px;
+        }
 
-                this.el.object3D.position.y = target.targetPosY;
-                difX = Math.abs(this.el.object3D.rotation.x - mouseAngX) * 5;
-                difY = Math.abs(this.el.object3D.rotation.y - mouseAngY) * 5;
+        .narrow {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-                if (this.el.object3D.rotation.x < mouseAngX - target.turnVal * difX)
-                    this.el.object3D.rotation.x += target.turnVal * difX;
-                else if (this.el.object3D.rotation.x > mouseAngX + target.turnVal * difX)
-                    this.el.object3D.rotation.x -= target.turnVal * difX;
+        header {
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            border-bottom: 1px solid var(--line);
+        }
 
-                if (this.el.object3D.rotation.y < mouseAngY - target.turnVal * difY)
-                    this.el.object3D.rotation.y += target.turnVal * difY;
-                else if (this.el.object3D.rotation.y > mouseAngY + target.turnVal * difY)
-                    this.el.object3D.rotation.y -= target.turnVal * difY;
+        header .narrow {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-            },
-        });
+        .brand {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            text-decoration: none;
+        }
 
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+            font-size: 15px;
+        }
 
-        window.addEventListener("mousemove", (e) => {
-            mouseAngY = -(((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
-            mouseAngX = -(((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
-        });
-        window.addEventListener("touchmove", (e) => {
-            mouseAngY = -(((window.innerWidth - e.changedTouches[0].clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
-            mouseAngX = -(((window.innerHeight - e.changedTouches[0].clientY) / window.innerHeight - 0.5) * Math.PI) / 2;
-        });
-    </script>
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        #theme-toggle {
+            background: none;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            color: var(--muted);
+            cursor: pointer;
+            font: inherit;
+            font-size: 13px;
+            line-height: 1;
+            padding: 5px 9px;
+            margin-left: 16px;
+            vertical-align: middle;
+        }
+
+        #theme-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .hero {
+            padding: 56px 0 8px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            line-height: 1.2;
+            font-weight: 750;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .role {
+            color: var(--accent);
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 44px 0;
+            scroll-margin-top: calc(var(--header-h, 64px) - 26px);
+        }
+
+        section+section {
+            border-top: 1px solid var(--line);
+        }
+
+        h2.section-title {
+            font-size: 24px;
+            margin-bottom: 22px;
+            letter-spacing: -0.3px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 124px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .about-grid img {
+            width: 124px;
+            height: 124px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+        }
+
+        .about-grid p {
+            color: var(--muted);
+        }
+
+        .about-grid p+p {
+            margin-top: 14px;
+        }
+
+        .about-grid strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-grid p a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .about-grid p a:hover {
+            text-decoration: underline;
+        }
+
+        .links {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .links a {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 6px 12px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .row {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .row img {
+            width: 76px;
+            height: 98px;
+            object-fit: cover;
+            object-position: top;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            flex-shrink: 0;
+            background: #ffffff;
+        }
+
+        .row.sq img {
+            height: 76px;
+            object-position: center;
+        }
+
+        .row.wide img {
+            width: 168px;
+            height: 112px;
+            object-position: center;
+        }
+
+        .row>div:last-child {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .row .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 14px;
+        }
+
+        .row .date {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .row .title {
+            font-weight: 600;
+        }
+
+        .row .title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .row .title a:hover {
+            color: var(--accent);
+        }
+
+        .row .meta {
+            color: var(--muted);
+            font-size: 15px;
+            margin-top: 2px;
+        }
+
+        .row .meta a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .row .meta a:hover {
+            text-decoration: underline;
+        }
+
+        .row .tag {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .contact p {
+            color: var(--muted);
+            max-width: 560px;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 26px 0 38px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid img {
+                margin: 0 auto;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+
+            .row.wide img {
+                width: 112px;
+                height: 84px;
+            }
+
+            .row .head {
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+    </style>
 </head>
 
-
-
-
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div id="status">&nbsp;</div>
-    </div>
-
-
-
-
-    <div id="HOME" style="background-position: 100% -125px; top: 0px;width:100%;">
-
-
-
-        <div class="section_overlay" style="overflow: hidden;
-         top:0px; position:relative;height:100vh ">
-
-
-
-
-
-
-            <div style="width: 100%;height:150%;position: absolute;left:50%;top:65%;z-index:-110;">
-                <a-scene embedded device-orientation-permission-ui="enabled: false" renderer="antialias: true;
-                colorManagement: true;
-                sortObjects: true;
-                physicallyCorrectLights: true;
-                maxCanvasWidth: 50;
-                maxCanvasHeight: 50;" ">
-
-                    <a-camera position=" 0 0 0" fov="40" near="1" wasd-controls-enabled="false">
-                    <a-entity turn_head="" position="0 0 -40">
-                        <a-entity material="color: red" position="0 -5 0" rotation="0 0 0" scale="0.05 0.05 0.05"
-                            gltf-model="assets/yertle.glb">
-                            <a-cursor></a-cursor>
-                        </a-entity>
-                    </a-entity>
-                    </a-camera>
-
-                </a-scene>
-            </div>
-
-
-
-
-
-            <nav style="background: rgba(250,250,250, .7);" class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
-                        style="text-transform: lowercase;">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#SERVICE" style="text-transform: lowercase; font-size: 18px;">Skills</a></li>
-                            <li><a href="#ABOUT" style="text-transform: lowercase; font-size: 18px;">About</a></li>
-                            <li><a href="#WORK" style="text-transform: lowercase; font-size: 18px;">Projects</a></li>
-                            <li><a href="#CONTACT" style="text-transform: lowercase; font-size: 18px;">Contact</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container -->
+    <header>
+        <div class="narrow">
+            <a class="brand" href="#">Jerome Graves</a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">CV</a>
+                <a href="#projects">Projects</a>
+                <a href="#publications">Publications</a>
+                <a href="#contact">Contact</a>
+                <button id="theme-toggle" aria-label="Switch between dark and light mode">&#9789;</button>
             </nav>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="home_text wow fadeInUp animated">
-                            <h2 style="padding-top: 15%;">Jerome Graves</h2>
-                            <img src="images/shape.png" alt="">
-                            <h2 style="font-size: 60px;font-weight: 100;opacity:  75%;"> <br> Engineer</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-        </section>
+    </header>
+
+    <div class="hero">
+        <div class="narrow">
+            <h1>I design and build instruments that unite physics, sensing, control and software.</h1>
+            <div class="role">R&amp;D Engineer, PhD. Ultrasonics, robotics, machine vision, embedded systems.</div>
+        </div>
     </div>
 
-
-    <section class="services" id="SERVICE">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-3 text-center" style="float:center;">
-                    <div class="single_service wow fadeInUp">
-                        <i class="fa fa-code"></i>
-                        <h2>MECHANICAL DESIGN</h2>
-                        <p> Experience with mechanical and mechatronic design (<b>robotics</b>, <b>industrial
-                                machines</b>).<br> Experience with MCAD software (<b>fusion360</b>), Different
-                            fabrication techniques (<b>3D printing</b>, <b>laser cutting</b>, <b>3-axis milling</b>
-                            )<br>
-
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 text-center" style="float:center;">
-                    <div class="single_service wow fadeInUp">
-                        <i class="fa fa-code"></i>
-                        <h2>Electronic Design</h2>
-                        <p>Experience with designing digital systems using <b>microcontrollers</b>, <b>FPGAs</b>, and
-                            <b>SOCs</b>. Experience with ECAD tools (<b>Autodesk Eagle</b>), soldering, testing and
-                            development boards.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="col-md-3 text-center" style="float:center;">
-                    <div class="single_service wow fadeInUp">
-                        <i class="fa fa-code"></i>
-                        <h2>Embedded Software Development</h2>
-                        <p>Experience with developing real-time systems using <b>C</b>, <b>C++</b> and <b>VHDL</b>.
-                            Experience with <b>WinCE</b> and <b>Linux</b> operating systems. Experience with wired and
-                            wireless communication protocols(<b>UDP</b>, <b>HTTP/IP</b>, <b>I2C</b>, <b>SPI</b>)</p>
-
-                    </div>
-                </div>
-
-
-                <div class="col-md-3 text-center" style="float:center;">
-                    <div class="single_service wow fadeInUp">
-                        <i class="fa fa-code"></i>
-                        <h2>Robotic System Development</h2>
-                        <p>Experience with <b>ROS </b>(robotic operating system) using <b>C++</b> and <b>Python</b>.
-                            Integrating <b>sensors</b>, robotic hardware and creating control systems. Experience with
-                            <b>Path planning</b>, <b>vision systems</b>, <b>manipulators</b>, <b>Inverse kinematics</b>,
-                            <b>mobile robotics</b>
-                        </p>
-                    </div>
-                </div>
-
-
-
-    </section>
-    <section class="about_us_area" id="ABOUT">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="about_title">
-
-
-
-                        <img src="images/photo.jpg" alt="" style="border: 1px groove #f73b56;
-                        border-radius: 50%;margin:20px;max-width: 150px;
-  height: auto;">
-                        <h2 style="margin-top:21px">About Me</h2>
+    <section id="about">
+        <div class="narrow">
+            <h2 class="section-title">About</h2>
+            <div class="about-grid">
+                <img src="images/photo.jpg" alt="Jerome Graves">
+                <div>
+                    <p>
+                        I am a research and development engineer based in London, with a <strong>PhD in electronic
+                            engineering</strong> from the <a href="https://sevanharput.github.io/" target="_blank"
+                            rel="noopener">SPE3D Ultrasonic Lab</a> at London South Bank University (2026), on
+                        three-dimensional ultrasound imaging of the crystal structure of ice cores. The research required designing and
+                        building the complete measurement chain: an automated multi-axis ultrasonic scanner, acoustic
+                        wave propagation models, inversion algorithms and the supporting analysis software.
+                    </p>
+                    <p>
+                        My work spans <strong>C++, Python and MATLAB</strong>, PCB design in KiCad, and mechanical
+                        design and fabrication. I place particular emphasis on systems that perform reliably beyond
+                        the laboratory: measured, validated and documented.
+                    </p>
+                    <p>
+                        I led LSBU's <strong>UniBots UK</strong> team to second place in 2024 and third in 2023, and
+                        have competed in engineering competitions since undergraduate, including Pi Wars, the IMechE
+                        Design Challenge and the Engineering for People national final.
+                    </p>
+                    <div class="links">
+                        <a href="assets/Jerome_Graves_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+                        <a href="mailto:jerome.a.graves@gmail.com">Email</a>
+                        <a href="https://www.linkedin.com/in/jerome-graves/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Jerome-Graves" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://www.researchgate.net/profile/Jerome_Graves" target="_blank"
+                            rel="noopener">ResearchGate</a>
+                        <a href="https://orcid.org/0000-0002-7789-4167" target="_blank" rel="noopener">ORCID</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-
-            <div class="col-md-4  wow fadeInUp animated">
-                <p class="about_us_p">
-
-                    A <strong> engineer</strong> from <strong>London, UK</strong>. Currently completing a <strong>PhD</strong> in electronic and electrical engineering studying <strong> 3D ultrasonic imaging of ice cores</strong> at <strong>London South Bank University</strong> .With experience with
-                    <strong>robotic systems</strong>,
-                    <strong>digital</strong> and <strong>analogue circuit design</strong>, <strong>mechatronics
-                        design&nbsp;</strong>, <strong>low-level</strong> and <strong>high-level
-                    </strong> programming languages. Well-versed in technology and writing code to create systems
-                    that are <strong>reliable and user-friendly</strong>. With the proven ability to develop
-                    <strong>hardware</strong> <strong>software</strong> systems and <strong>effectively track
-                        changes</strong>.
-                    A <strong>confident communicator</strong>, <strong>strategic thinker</strong>, and
-                    <strong>innovative
-                        creator</strong> ready to develop cutting edge systems.
-                    </br> for more information see my <a title="linkedin"
-                        href="https://www.linkedin.com/in/jerome-graves/" target="_blank" rel="noopener">linkedin</a>
-                </p>
-            </div>
-            <div class="col-md-4  wow fadeInUp animated">
-                <p class="about_us_p">I graduated with a <strong>1st class</strong> degree in <strong>electronic and
-                        electrical engineering</strong> from <strong>London South Bank University</strong> in
-                    <strong>2020</strong>. As a member of the <strong>robotics society,</strong>&nbsp;I had the
-                    pleasure of representing the university in the &nbsp;<a
-                        title="Engineering for People (EfP) Design Challenge"
-                        href="https://www.lsbu.ac.uk/about-us/news/students-engineering-design-challenge-national-final"
-                        target="_blank" rel="noopener">Engineering for People (EfP) Design Challenge</a>, <a
-                        title="Mayor's Entrepreneur Competition"
-                        href="https://www.london.gov.uk/what-we-do/business-and-economy/mayors-entrepreneur-competition"
-                        target="_blank" rel="noopener">Mayor's Entrepreneur Competition</a>, <a title="Pi Wars"
-                        href="https://piwars.org/">Pi Wars</a>&nbsp;and the <a title="ImechE design challenge"
-                        href="https://www.imeche.org/events/challenges/design-challenge" target="_blank"
-                        rel="noopener">ImechE design challenge</a>. I have a passion for robotic control software and my
-                    final year project was titled <a title="Quadrupedal robotic Platform for research on legged motion"
-                        href="https://www.researchgate.net/project/Quadrupedal-Robotic-Platform-For-Research-on-Legged-Motion-Planning"
-                        target="_blank" rel="noopener">Quadrupedal robotic Platform for research on legged motion</a>.
-                    It was a mechatronic project that required me to <strong>design</strong> and <strong>build</strong>
-                    a <strong>4 legged robot</strong> and <strong>control
-                        software</strong> that would traverse
-                    over uneven terrain, using <strong>ROS</strong> (Robotic Operating System).
-                </p>
-            </div>
-
-            <div class="col-md-4  wow fadeInUp animated">
-                <p class="about_us_p">I worked at <strong>London south Bank University</strong>
-                    (<strong>2021-2022</strong>) as an <strong> associate researcher</strong>, in the mechanical
-                    engineering department. My role required me to <strong>design a novel machine (thermal transfer
-                        printer)</strong> for the <strong> packaging </strong> industry with input from both
-                    <strong>academic</strong> and <strong>industrial</strong> partners.
-                </p>
-            </div>
-        </div>
         </div>
     </section>
 
-    <section clas="work_area" id="WORK">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="work_title  wow fadeInUp animated">
-                        <h1>Projects</h1>
-                        <p style="font-size: 15px;margin-bottom: 10px;">
-                            <!-- For examples of my work please see the following selection of <strong>open source</strong> projects. <br>
-                            For more, 
-                            -->
-                            See my <a href="https://www.github.com/Jerome-Graves">Github</a>.
-                        </p>
-                        <img src="images/shape.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6 text-center" style="float:center;">
-
-                    <div class="single_service wow fadeInUp">
-                        <img src="images/undergradRobot.jpg" alt=""
-                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
-                        <h2>Quadrupedal Robotic Platform For Research on Legged Motion Planning</h2>
-                        <h3 style="color: #f73b56;">Undergraduate Project</h3>
-                        <p> The design and creation of a quadrupedal robotic platform and implementation of robotic
-                            control algorithms for legged motion planning using ROS (robotic operations system).
-                        </p>
-
-                        <a style="color: #f73b56;"
-                            href="assets/QuadrupedalRoboticPlatformForResearchonLeggedMotionPlanningpaper-compressed.pdf"
-                            target="_blank">View Paper</a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 text-center" style="float:center;">
-
-                    <div class="single_service wow fadeInUp">
-                        <img src="images/w7.png" alt=""
-                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
-                        <h2>Yertle: A 3D Printed Quadrupedal Robot for Locomotion Research</h2>
-                        <h3 style="color: #f73b56;">Open-source Project</h3>
-                        <p> A continuation of my undergraduate project increasing its capability while reducing build
-                            cost.
-                        </p>
-
-                        <a style="color: #f73b56;" href="https://github.com/Jerome-Graves/yertle" target="_blank">View
-                            Project</a>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="row">
-            
-                <div class="col-md-6 text-center" style="float:center;">
-            
-                    <div class="single_service wow fadeInUp">
-                        <img src="images/w5.png" alt=""
-                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
-                        <h2>Three-Dimensional Imaging of Ice Cores</h2>
-                        <h3 style="color: #f73b56;">PhD Scholarship</h3>
-                        <p> This project is to design, build and test a new ultrasonic tool which allows us to view the internal
-                            crystal structure of ice cores.
-                        </p>
-
-                        <a style="color: #f73b56;" href="https://github.com/Jerome-Graves" target="_blank">View
-                            Project</a>
-                    </div>
-                </div>
-            
-                <div class="col-md-6 text-center" style="float:center;">
-
-                    <div class="single_service wow fadeInUp">
-                        <img src="images/foil.jpg" alt=""
-                            style="border:3px solid #f73b56;border-radius: 5%;opacity: 50%;width:300px;min-height: 100%">
-                        <h2>The Coding Industry: A technological retrospective and forecast.</h2>
-                        <h3 style="color: #f73b56;">White Paper</h3>
-                        <p> This white paper is aimed at people who are interesting in coding, searching for information
-                            about the technology used today and the implications modern research might have on the
-                            industry. It presents the limitations and inefficiencies of the current coding technologies
-                            and gives use cases for more efficient and cost-effective technologies
-                        </p>
-
-                        <a style="color: #f73b56;"
-                            href="https://github.com/Jerome-Graves/TheCodingIndustryWhitePaper/blob/main/report.pdf"
-                            target="_blank">View Paper</a>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-
-
-
-              
-
-
-
-            </div>
-
-
-    </section>
-
-
-    <section class="contact" id="CONTACT">
-        <div class="container" style="margin-top: 10%;">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="contact_title  wow fadeInUp animated">
-                        <h1>get in touch</h1>
-                        <img src="images/shape.png" alt="">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-
-    <footer style="background-color:rgba(0,0,0,0.1)">
-        <div class="container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center   wow fadeInUp animated">
-                        <div class="social">
-                            <h2 style="font-size: 20px;"></h2>
-                            <ul class="icon_list">
-
-                                <li>
-                                    <a style="width: 150px;height: auto;border:none;"
-                                        href="https://www.linkedin.com/in/jerome-graves/" target="_blank"><i
-                                            class="fa fa-linkedin" style="font-size: 90px;"></i></a>
-                                </li>
-
-                                <li>
-                                    <a style="width: 150px;height: auto;border:none;"
-                                        href="https://github.com/Jerome-Graves" target="_blank"><i class="fa fa-github"
-                                            style="font-size: 90px;"></i></a>
-                                </li>
-
-                                <li>
-                                    <a style="width: 150px;height: auto;border:none;"
-                                        href="https://www.researchgate.net/profile/Jerome_Graves" target="_blank"><i
-                                            class="fa fa-researchgate"
-                                            style="font-size: 90px;"><b>R</b><sup>G</sup></i></a>
-                                </li>
-
-                                <li>
-                                    <a style="width: 150px;height: auto;border:none;"
-                                        href="mailto:jerome.a.graves@gmail.com" target="_blank"><i
-                                            class="fa fa-envelope" style="font-size: 90px;"></i></a>
-                                </li>
-
-                            </ul>
+    <section id="experience">
+        <div class="narrow">
+            <h2 class="section-title">CV</h2>
+            <div class="row sq">
+                <img loading="lazy" decoding="async" src="images/grainmap.jpg" alt="Segmented grain map from crystal fabric measurement">
+                <div>
+                    <div class="head">
+                        <div class="title">Doctoral Researcher, <a href="https://sevanharput.github.io/"
+                                target="_blank" rel="noopener">SPE3D Ultrasonic Lab</a>, London South Bank University
                         </div>
+                        <div class="date">2023 &ndash; 2026</div>
+                    </div>
+                    <div class="meta">PhD completed July 2026. Designed and built an automated multi-axis ultrasonic
+                        scanning system and a camera-based optical instrument, and developed wave propagation models,
+                        inversion algorithms and parallel analysis pipelines in MATLAB, Python and C++, reducing
+                        analysis runtime by 70%.</div>
+                </div>
+            </div>
+            <div class="row sq">
+                <img loading="lazy" decoding="async" src="images/w5.png" alt="London South Bank University">
+                <div>
+                    <div class="head">
+                        <div class="title">Lecturer and Teaching Assistant, London South Bank University</div>
+                        <div class="date">2023 &ndash; 2026</div>
+                    </div>
+                    <div class="meta">Delivered teaching in engineering, Python, MATLAB and instrumentation, and
+                        supervised student projects in embedded systems and electromechanical design.</div>
+                </div>
+            </div>
+            <div class="row sq">
+                <img loading="lazy" decoding="async" src="images/kure_scan.jpg" alt="Ultrasound scan with detected features circled">
+                <div>
+                    <div class="head">
+                        <div class="title">Research Lead in Ultrasound Testing, London South Bank University and KURE
+                        </div>
+                        <div class="date">2022 &ndash; 2023</div>
+                    </div>
+                    <div class="meta">Led a £19,000 industry-funded consultancy, developing automated ultrasonic
+                        measurement and detection workflows and delivering validation results directly to the client
+                        in support of product development.</div>
+                </div>
+            </div>
+            <div class="row sq">
+                <img loading="lazy" decoding="async" src="images/w4.png" alt="Thermal transfer printer printing labels">
+                <div>
+                    <div class="head">
+                        <div class="title">Associate Researcher, Knowledge Transfer Partnership, London South Bank
+                            University and Industrial Partner</div>
+                        <div class="date">2021 &ndash; 2022</div>
+                    </div>
+                    <div class="meta">Technical lead on a £100,000 Knowledge Transfer Partnership to redesign an
+                        industrial thermal transfer printer. Developed FPGA motion control in VHDL and led
+                        verification and system integration, delivering a twofold productivity increase.</div>
+                </div>
+            </div>
+            <div class="row sq">
+                <img loading="lazy" decoding="async" src="images/undergradRobot.jpg" alt="Undergraduate quadruped robot">
+                <div>
+                    <div class="head">
+                        <div class="title">BEng (Hons) Electrical and Electronic Engineering, 1st Class, London South
+                            Bank University</div>
+                        <div class="date">2017 &ndash; 2020</div>
+                    </div>
+                    <div class="meta">Graduated with first-class honours. Final-year project: a ROS-based quadrupedal
+                        robot with embedded control and terrain-adaptive motion. Circuit Design 97%, Digital Systems
+                        88%, Control Engineering 87%.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="narrow">
+            <h2 class="section-title">Projects</h2>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/fabric_analyser.jpg"
+                    alt="The Fabric Analyser: CAD model beside the built instrument">
+                <div>
+                    <span class="tag">Machine vision instrument</span>
+                    <div class="title"><a href="https://github.com/Jerome-Graves/fabric-analyser" target="_blank"
+                            rel="noopener">Fabric Analyser (PhD)</a></div>
+                    <div class="meta">A camera-based cross-polarised scanner developed from CAD model to working
+                        instrument: three-axis gimbal, custom PCB and firmware, and a Python/OpenCV pipeline that
+                        measures the crystal orientations of ice specimens.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/pulse_echo_scanner.jpg"
+                    alt="The pulse-echo azimuthal scanner: CAD model and built instrument">
+                <div>
+                    <span class="tag">Ultrasonic instrument</span>
+                    <div class="title"><a href="#publications">Pulse-Echo Azimuthal Scanner (PhD)</a></div>
+                    <div class="meta">A single-transducer reflection scanner developed from CAD model to working
+                        instrument: a motorised rotary stage indexes disk specimens through azimuth while the
+                        transducer tracks the curved surface, mapping directional velocity variation and validated
+                        experimentally to a best-case orientation error of 4.3 degrees.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/ice_scanner.jpg"
+                    alt="The five-axis ultrasonic core scanner: CAD model and built instrument">
+                <div>
+                    <span class="tag">Ultrasonic instrument</span>
+                    <div class="title"><a href="https://github.com/Jerome-Graves/ice-cnc-ultrasound" target="_blank"
+                            rel="noopener">Five-Axis Core Scanner (PhD)</a></div>
+                    <div class="meta">A five-axis pitch-catch ultrasonic scanner developed from CAD model to working
+                        instrument: twin steerable transducer carriages around a rotating core, motion control with a
+                        load-cell coupling interlock, and a Python acquisition stack that measures how sound crosses
+                        intact ice cores from thousands of angles.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/wave_sim.jpg"
+                    alt="Simulated ultrasonic wavefront propagating through a polycrystalline ice disc">
+                <div>
+                    <span class="tag">Numerical modelling</span>
+                    <div class="title"><a href="#publications">Anisotropic Wave Modelling and Inversion (PhD)</a></div>
+                    <div class="meta">A finite-difference simulation framework for ultrasonic wave propagation in
+                        anisotropic polycrystalline ice: forward model selection, timing methodology and Cram&eacute;r-Rao
+                        accuracy limits, feeding the inversion algorithms that estimate crystal orientation from
+                        measured data. Published at the IEEE International Ultrasonics Symposium 2026.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/openusct_fwi.jpg"
+                    alt="Full waveform inversion reconstruction from a ring array of transducers">
+                <div>
+                    <span class="tag">Open source ultrasonics</span>
+                    <div class="title"><a href="https://github.com/Jerome-Graves/openUSCT" target="_blank"
+                            rel="noopener">OpenUSCT</a></div>
+                    <div class="meta">An open-source platform for ultrasound computed tomography: full waveform
+                        inversion in Python with C++ and GPU backends, an FPGA acquisition datapath co-simulated in
+                        SystemVerilog, and a browser-based studio interface requiring no installation.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/w7.png" alt="Yertle, a 3D printed quadruped robot">
+                <div>
+                    <span class="tag">Open source robotics</span>
+                    <div class="title"><a href="https://github.com/Jerome-Graves/yertle" target="_blank"
+                            rel="noopener">Yertle Quadruped</a></div>
+                    <div class="meta">A low-cost 3D-printed quadrupedal platform for legged locomotion research,
+                        developed from my undergraduate final-year project. ROS-based control, embedded firmware and
+                        mechanical design, with over 130 stars on GitHub.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/bugbot_robot.jpg"
+                    alt="The BugBot robot with camera and time-of-flight sensing">
+                <div>
+                    <span class="tag">Open source robotics</span>
+                    <div class="title"><a href="https://github.com/BugBotLab/bugbot" target="_blank"
+                            rel="noopener">BugBot</a></div>
+                    <div class="meta">An open-source educational robot propelled by <strong>ultrasonic friction
+                            modulation</strong>: ultrasonically vibrated feet modulate ground friction to produce
+                        holonomic motion, stabilised by sensor fusion and closed-loop control. An on-board camera
+                        provides <strong>edge AI vision</strong>, from AprilTag localisation to live computer vision
+                        in the operator's browser. Custom controller PCB in KiCad, time-of-flight sensing, C/C++
+                        firmware on FreeRTOS, and ROS 2 and simulation support in development.</div>
+                </div>
+            </div>
+            <div class="row wide">
+                <img loading="lazy" decoding="async" src="images/meowtion_cat.jpg"
+                    alt="A cat wearing the Meowtion collar">
+                <div>
+                    <span class="tag">Embedded machine learning</span>
+                    <div class="title"><a href="https://github.com/Jerome-Graves/meowtion" target="_blank"
+                            rel="noopener">Meowtion</a></div>
+                    <div class="meta">A wearable activity monitor for cats: nRF52840/Zephyr firmware streaming motion
+                        and audio over BLE to an ESP32-S3 base station, cloud-trained machine-learning activity
+                        recognition, and a Firebase-backed live dashboard.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="narrow">
+            <h2 class="section-title">Publications</h2>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/ius2026_sim.png" alt="First page of the simulation framework paper">
+                <div>
+                    <div class="title">A Finite-Difference Simulation Framework for Ultrasonic Crystal Orientation
+                        Fabric Estimation in Ice: Timing Methodology, Forward Model Selection, and the Cram&eacute;r-Rao
+                        Accuracy Limit</div>
+                    <div class="meta">J. Graves, S. Harput, B. Lishman. IEEE International Ultrasonics Symposium, 2026
+                        (accepted).</div>
+                </div>
+            </div>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/ius2026_exp.png" alt="First page of the experimental validation paper">
+                <div>
+                    <div class="title">Non-Destructive Ultrasonic Estimation of Ice Crystal Orientation Fabric:
+                        Multi-Frequency Experimental Validation and Failure Mode Characterisation</div>
+                    <div class="meta">J. Graves, S. Harput, B. Lishman. IEEE International Ultrasonics Symposium, 2026
+                        (accepted).</div>
+                </div>
+            </div>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/coding_industry.png" alt="Cover of The Coding Industry white paper">
+                <div>
+                    <div class="title">The Coding Industry: A Technological Retrospective and Forecast</div>
+                    <div class="meta">J. Graves. White paper, 2026.
+                        <a href="https://doi.org/10.5281/zenodo.20887829" target="_blank"
+                            rel="noopener">doi:10.5281/zenodo.20887829</a>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="copyright_text   wow fadeInUp animated">
-                            <p>&copy; Jerome Graves 2022
-
-                        </div>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/crst_preprint.png" alt="First page of the ice crystal fabrics preprint">
+                <div>
+                    <div class="title">Measuring Predominant Orientations of Ice Crystal Fabrics From Ultrasonic
+                        Measurements of Ice Cores</div>
+                    <div class="meta">J. Graves, B. Lishman, S. Harput. Cold Regions Science and Technology (preprint).
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/ius2023.png" alt="First page of the IUS 2023 paper">
+                <div>
+                    <div class="title">Determining the Grain Geometry From Ultrasonic Measurements of Large-Grained
+                        Temperate Ice Cores</div>
+                    <div class="meta">J. Graves, B. Lishman, S. Harput. IEEE International Ultrasonics Symposium, 2023.
+                        <a href="https://doi.org/10.1109/ius51837.2023.10307539" target="_blank"
+                            rel="noopener">doi:10.1109/ius51837.2023.10307539</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/poac2023.png" alt="Title page of the POAC 2023 paper">
+                <div>
+                    <div class="title">An Algorithm for Determining the Grain Geometry From Ultrasonic Measurements of
+                        Large-Grained Temperate Ice Cores</div>
+                    <div class="meta">J. Graves, B. Lishman, S. Harput. Port and Ocean Engineering under Arctic
+                        Conditions, 2023.</div>
+                </div>
+            </div>
+            <div class="row">
+                <img loading="lazy" decoding="async" src="images/pubs/quadruped.png" alt="First page of the quadruped robot paper">
+                <div>
+                    <div class="title">Quadrupedal Robotic Platform for Research on Legged Motion Planning</div>
+                    <div class="meta">Undergraduate final year project.
+                        <a href="assets/QuadrupedalRoboticPlatformForResearchonLeggedMotionPlanningpaper-compressed.pdf"
+                            target="_blank" rel="noopener">Paper (PDF)</a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="narrow">
+            <h2 class="section-title">Contact</h2>
+            <p>I am currently open to senior research and development engineering roles in ultrasonics, robotics and
+                instrumentation. I am based in London; email is the most reliable way to reach me.</p>
+            <div class="links">
+                <a href="mailto:jerome.a.graves@gmail.com">jerome.a.graves@gmail.com</a>
+                <a href="https://www.linkedin.com/in/jerome-graves/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/Jerome-Graves" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="narrow">&copy; Jerome Graves 2026</div>
     </footer>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- =========================
-     SCRIPTS 
-============================== -->
-
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nicescroll.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/script.js"></script>
-
     <script>
+        (function () {
+            var root = document.documentElement;
+            var btn = document.getElementById('theme-toggle');
+            var media = window.matchMedia('(prefers-color-scheme: dark)');
 
-        var mouseX = 0;
-        var mouseY = 0;
+            function setHeaderHeight() {
+                root.style.setProperty('--header-h', document.querySelector('header').offsetHeight + 'px');
+            }
+            setHeaderHeight();
+            window.addEventListener('resize', setHeaderHeight);
 
+            function current() {
+                return root.dataset.theme || (media.matches ? 'dark' : 'light');
+            }
 
-        AFRAME.registerComponent("turn_head", {
-            schema: {
-                // target: { type: "selector" },
-                // speed: { type: "number" },
-            },
-            init: function () { },
+            function refresh() {
+                btn.innerHTML = current() === 'dark' ? '&#9788;' : '&#9789;';
+            }
 
-            tick: function (time, timeDelta) {
-                // mouseX = mouseX - 50;
-                this.el.object3D.rotation.x = -mouseY;
-                this.el.object3D.rotation.y = -mouseX;
-            },
-        });
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) { }
+            if (saved === 'dark' || saved === 'light') root.dataset.theme = saved;
+            refresh();
 
-        window.addEventListener("mousemove", (e) => {
-            mouseX =
-                (((window.innerWidth - e.clientX) / window.innerWidth - 0.5) * Math.PI) / 2;
-            mouseY =
-                (((window.innerHeight - e.clientY) / window.innerHeight - 0.5) * Math.PI) /
-                2;
-        });
+            btn.addEventListener('click', function () {
+                var next = current() === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = next;
+                try { localStorage.setItem('theme', next); } catch (e) { }
+                refresh();
+            });
+        })();
     </script>
-
-
 </body>
 
 </html>
